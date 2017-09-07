@@ -1,7 +1,9 @@
 ﻿using FOI.PI.MusicBandApp.Business.Account;
 using FOI.PI.MusicBandApp.Common.Extensions;
 using FOI.PI.MusicBandApp.Common.Resources;
+using FOI.PI.MusicBandApp.DatabaseAccess.Repository;
 using FOI.PI.MusicBandApp.Desktop.Helper;
+using FOI.PI.MusicBandApp.Desktop.View;
 using System.Linq;
 
 namespace FOI.PI.MusicBandApp.Desktop
@@ -21,7 +23,7 @@ namespace FOI.PI.MusicBandApp.Desktop
         {
             if (mail.IsInputEmpty() || password.IsInputEmpty())
             {
-                MessageBoxHelper.ShowMessageBox(ResourceHelper.ResourceKey.UsernameOrPasswordMissing);
+                MessageBoxHelper.ShowMessageBox(ResourceHelper.ResourceKey.InputFieldsMissing);
             }
             else
             {
@@ -39,7 +41,7 @@ namespace FOI.PI.MusicBandApp.Desktop
 
         private void btn_Registracija_Click(object sender, System.EventArgs e)
         {
-
+            new Registration(new AccountManagementService(new AccountServiceRepository())).Show();
         }
     }
 }

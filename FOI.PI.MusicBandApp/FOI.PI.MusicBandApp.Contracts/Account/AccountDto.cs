@@ -11,6 +11,8 @@ namespace FOI.PI.MusicBandApp.Contracts.Account
         public string City { get; set; }
         public string Gender { get; set; }
         public string Mail { get; set; }
+        public string Password { get; set; }
+        public int? AccountType { get; set; }
         public IList<ErrorDto> Errors { get; set; }
 
         public AccountDto()

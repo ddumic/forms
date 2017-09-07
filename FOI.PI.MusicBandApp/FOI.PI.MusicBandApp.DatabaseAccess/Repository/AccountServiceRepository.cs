@@ -1,6 +1,7 @@
 ﻿using FOI.PI.MusicBandApp.Contracts;
 using FOI.PI.MusicBandApp.Contracts.Account;
 using FOI.PI.MusicBandApp.Contracts.Validation;
+using System;
 using System.Linq;
 
 namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository
@@ -24,6 +25,12 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository
                 {
                     var loggedUser = user.First();
                     responseDto.Address = loggedUser.adresa;
+                    responseDto.AccountType = loggedUser.tip_korisnika;
+                    responseDto.City = loggedUser.mjesto;
+                    responseDto.Gender = loggedUser.spol;
+                    responseDto.Mail = loggedUser.mail;
+                    responseDto.Name = loggedUser.ime;
+                    responseDto.Surname = loggedUser.prezime;
                 }
                 else
                 {
@@ -33,6 +40,26 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository
                     });
                 }
                 return responseDto;
+            }
+        }
+
+        public ErrorDto Register(AccountDto account)
+        {
+            using (var db = new MusicBandAppEntities())
+            {
+                db.Osoba.Add(new Osoba()
+                {
+                    adresa = account.Address,
+                    ime = account.Name,
+                    lozinka = account.Password,
+                    mail = account.Mail,
+                    mjesto = account.City,
+                    prezime = account.Surname,
+                    spol = account.Gender,
+                    tip_korisnika = account.AccountType
+                });
+                db.SaveChanges();
+                return new ErrorDto();
             }
         }
     }

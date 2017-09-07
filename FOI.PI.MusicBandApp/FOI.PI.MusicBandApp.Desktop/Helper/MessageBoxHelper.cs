@@ -17,5 +17,13 @@ namespace FOI.PI.MusicBandApp.Desktop.Helper
                 , MessageBoxButtons.OK
                 , MessageBoxIcon.Error);
         }
+
+        public static void ShowMessageBox(string text, bool success)
+        {
+            MessageBox.Show(TranslationHelper.GetTranslatedValue(text)
+                , TranslationHelper.GetTranslatedValue(ResourceHelper.ResourceKey.Success)
+                , MessageBoxButtons.OK
+                , MessageBoxIcon.Information);
+        }
     }
 }

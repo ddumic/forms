@@ -3,6 +3,7 @@ using System.Linq;
 using FOI.PI.MusicBandApp.Contracts.Validation;
 using FOI.PI.MusicBandApp.Contracts;
 using System.Collections.Generic;
+using System;
 
 namespace FOI.PI.MusicBandApp.Business.Account
 {
@@ -25,6 +26,21 @@ namespace FOI.PI.MusicBandApp.Business.Account
             }
             user.Errors = translatedErrors;
             return user;
+        }
+
+        public ErrorDto Register(AccountDto account)
+        {
+            try
+            {
+                return _accountServiceRepository.Register(account);
+            }
+            catch (Exception ex)
+            {
+                return new ErrorDto()
+                {
+                    ErrorMesssage = ex.Message
+                };
+            }
         }
     }
 }

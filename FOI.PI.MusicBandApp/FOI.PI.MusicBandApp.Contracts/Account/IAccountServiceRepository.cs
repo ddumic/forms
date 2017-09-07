@@ -3,5 +3,6 @@
     public interface IAccountServiceRepository
     {
         AccountDto Login(string mail, string password);
+        ErrorDto Register(AccountDto account);
     }
 }

@@ -70,11 +70,29 @@ namespace FOI.PI.MusicBandApp.Desktop.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unesite korisničko ime i lozinku.
+        ///   Looks up a localized string similar to Mail nije u pravilnom formatu.
         /// </summary>
-        internal static string InsertUsernameAndPassword {
+        internal static string IncorrectEmailFormat {
             get {
-                return ResourceManager.GetString("InsertUsernameAndPassword", resourceCulture);
+                return ResourceManager.GetString("IncorrectEmailFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Popunite sva polja.
+        /// </summary>
+        internal static string InsertAllValues {
+            get {
+                return ResourceManager.GetString("InsertAllValues", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registracija uspješno provedena!.
+        /// </summary>
+        internal static string RegisteredSuccessfully {
+            get {
+                return ResourceManager.GetString("RegisteredSuccessfully", resourceCulture);
             }
         }
         
@@ -84,6 +102,15 @@ namespace FOI.PI.MusicBandApp.Desktop.Resources {
         internal static string ResultSetHasMultipleValues {
             get {
                 return ResourceManager.GetString("ResultSetHasMultipleValues", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Potvrda.
+        /// </summary>
+        internal static string Success {
+            get {
+                return ResourceManager.GetString("Success", resourceCulture);
             }
         }
         

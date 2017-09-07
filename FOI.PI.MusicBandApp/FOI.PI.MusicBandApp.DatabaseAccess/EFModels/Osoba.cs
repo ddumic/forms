@@ -12,7 +12,7 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Osoba()
         {
-            KorisnickiRacun = new HashSet<KorisnickiRacun>();
+            Rezervacija = new HashSet<Rezervacija>();
         }
 
         [Key]
@@ -35,9 +35,20 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess
 
         public int? id_bend { get; set; }
 
+        [Required]
+        [StringLength(100)]
+        public string mail { get; set; }
+
+        [StringLength(100)]
+        public string lozinka { get; set; }
+
+        public int? tip_korisnika { get; set; }
+
         public virtual Bend Bend { get; set; }
 
+        public virtual TipKorisnika TipKorisnika { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KorisnickiRacun> KorisnickiRacun { get; set; }
+        public virtual ICollection<Rezervacija> Rezervacija { get; set; }
     }
 }

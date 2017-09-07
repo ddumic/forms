@@ -14,7 +14,6 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess
 
         public virtual DbSet<Bend> Bend { get; set; }
         public virtual DbSet<Financije> Financije { get; set; }
-        public virtual DbSet<KorisnickiRacun> KorisnickiRacun { get; set; }
         public virtual DbSet<Osoba> Osoba { get; set; }
         public virtual DbSet<Pjesma> Pjesma { get; set; }
         public virtual DbSet<PopisOpreme> PopisOpreme { get; set; }
@@ -86,20 +85,6 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess
                 .Property(e => e.opis)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<KorisnickiRacun>()
-                .Property(e => e.korisnicko_ime)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<KorisnickiRacun>()
-                .Property(e => e.lozinka)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<KorisnickiRacun>()
-                .HasMany(e => e.Rezervacija)
-                .WithRequired(e => e.KorisnickiRacun)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<Osoba>()
                 .Property(e => e.ime)
                 .IsUnicode(false);
@@ -121,9 +106,12 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess
                 .IsUnicode(false);
 
             modelBuilder.Entity<Osoba>()
-                .HasMany(e => e.KorisnickiRacun)
-                .WithRequired(e => e.Osoba)
-                .WillCascadeOnDelete(false);
+                .Property(e => e.mail)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Osoba>()
+                .Property(e => e.lozinka)
+                .IsUnicode(false);
 
             modelBuilder.Entity<Pjesma>()
                 .Property(e => e.naziv)
@@ -158,9 +146,9 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess
                 .IsUnicode(false);
 
             modelBuilder.Entity<TipKorisnika>()
-                .HasMany(e => e.KorisnickiRacun)
-                .WithRequired(e => e.TipKorisnika)
-                .WillCascadeOnDelete(false);
+                .HasMany(e => e.Osoba)
+                .WithOptional(e => e.TipKorisnika)
+                .HasForeignKey(e => e.tip_korisnika);
 
             modelBuilder.Entity<Zanr>()
                 .Property(e => e.naziv)

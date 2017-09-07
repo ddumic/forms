@@ -24,10 +24,10 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess
 
         public int id_bend { get; set; }
 
-        public int id_korisnik { get; set; }
+        public int? id_osoba { get; set; }
 
         public virtual Bend Bend { get; set; }
 
-        public virtual KorisnickiRacun KorisnickiRacun { get; set; }
+        public virtual Osoba Osoba { get; set; }
     }
 }

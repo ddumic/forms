@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3017E8E9-5CAD-42C1-ADBD-F98ABAD844D9}</ProjectGuid>
+    <ProjectGuid>{04A4C41E-880E-4C4E-94A5-D0A5F061E7AF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FOI.PI.MusicBandApp.Business</RootNamespace>
-    <AssemblyName>FOI.PI.MusicBandApp.Business</AssemblyName>
+    <RootNamespace>FOI.PI.MusicBandApp.Common</RootNamespace>
+    <AssemblyName>FOI.PI.MusicBandApp.Common</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,19 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account\AccountManagementService.cs" />
-    <Compile Include="Account\IAccountManagementService.cs" />
+    <Compile Include="Extensions\InputValidationExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FOI.PI.MusicBandApp.Contracts\FOI.PI.MusicBandApp.Contracts.csproj">
-      <Project>{314524c6-0bc2-4a49-b0bf-c9e56d2b1302}</Project>
-      <Name>FOI.PI.MusicBandApp.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FOI.PI.MusicBandApp.DatabaseAccess\FOI.PI.MusicBandApp.DatabaseAccess.csproj">
-      <Project>{e3ad57ae-b2c2-414e-aeb3-514c7c4aa845}</Project>
-      <Name>FOI.PI.MusicBandApp.DatabaseAccess</Name>
-    </ProjectReference>
+    <Compile Include="Resources\ResourceHelper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

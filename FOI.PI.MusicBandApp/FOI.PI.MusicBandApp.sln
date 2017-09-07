@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FOI.PI.MusicBandApp.Contrac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FOI.PI.MusicBandApp.Business", "FOI.PI.MusicBandApp.Business\FOI.PI.MusicBandApp.Business.csproj", "{3017E8E9-5CAD-42C1-ADBD-F98ABAD844D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FOI.PI.MusicBandApp.Common", "FOI.PI.MusicBandApp.Common\FOI.PI.MusicBandApp.Common.csproj", "{04A4C41E-880E-4C4E-94A5-D0A5F061E7AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{3017E8E9-5CAD-42C1-ADBD-F98ABAD844D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3017E8E9-5CAD-42C1-ADBD-F98ABAD844D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3017E8E9-5CAD-42C1-ADBD-F98ABAD844D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04A4C41E-880E-4C4E-94A5-D0A5F061E7AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04A4C41E-880E-4C4E-94A5-D0A5F061E7AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04A4C41E-880E-4C4E-94A5-D0A5F061E7AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04A4C41E-880E-4C4E-94A5-D0A5F061E7AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

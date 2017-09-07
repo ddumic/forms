@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FOI.PI.MusicBandApp.Business.Account;
+using FOI.PI.MusicBandApp.DatabaseAccess.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +18,7 @@ namespace FOI.PI.MusicBandApp.Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Login(new AccountManagementService(new AccountServiceRepository())));
         }
     }
 }

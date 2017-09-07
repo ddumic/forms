@@ -12,7 +12,7 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TipKorisnika()
         {
-            KorisnickiRacun = new HashSet<KorisnickiRacun>();
+            Osoba = new HashSet<Osoba>();
         }
 
         [Key]
@@ -22,6 +22,6 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess
         public string naziv { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KorisnickiRacun> KorisnickiRacun { get; set; }
+        public virtual ICollection<Osoba> Osoba { get; set; }
     }
 }

@@ -16,6 +16,11 @@ namespace FOI.PI.MusicBandApp.Business.Band
             _bandServiceRepository = bandServiceRepository;
         }
 
+        public List<BandDto> GetAllBands()
+        {
+            return _bandServiceRepository.GetAllBands();
+        }
+
         public BandDto GetBand(string mail, string password)
         {
             var band = _bandServiceRepository.GetBand(mail, password);

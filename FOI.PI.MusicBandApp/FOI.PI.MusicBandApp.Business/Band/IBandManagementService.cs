@@ -1,5 +1,6 @@
 ﻿using FOI.PI.MusicBandApp.Contracts;
 using FOI.PI.MusicBandApp.Contracts.Band;
+using System.Collections.Generic;
 
 namespace FOI.PI.MusicBandApp.Business.Band
 {
@@ -8,5 +9,6 @@ namespace FOI.PI.MusicBandApp.Business.Band
         BandDto GetBandDetails(int id);
         ErrorDto Register(BandDto band);
         BandDto GetBand(string mail, string password);
+        List<BandDto> GetAllBands();
     }
 }

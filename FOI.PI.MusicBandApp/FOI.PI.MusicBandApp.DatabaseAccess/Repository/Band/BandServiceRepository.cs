@@ -2,6 +2,8 @@
 using FOI.PI.MusicBandApp.Contracts.Band;
 using FOI.PI.MusicBandApp.Contracts.Validation;
 using System.Linq;
+using System;
+using System.Collections.Generic;
 
 namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Band
 {
@@ -90,6 +92,19 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Band
                     });
                 }
                 return responseDto;
+            }
+        }
+
+        public List<BandDto> GetAllBands()
+        {
+            using (var db = new MusicBandAppEntities())
+            {
+                var response = new List<BandDto>();
+                foreach (var band in db.Bend)
+                {
+                    response.Add(MapBand(band));
+                }
+                return response;
             }
         }
 

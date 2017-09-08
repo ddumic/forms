@@ -6,6 +6,8 @@ using FOI.PI.MusicBandApp.DatabaseAccess.Repository.Account;
 using FOI.PI.MusicBandApp.DatabaseAccess.Repository.Band;
 using FOI.PI.MusicBandApp.Desktop.Helper;
 using FOI.PI.MusicBandApp.Desktop.View;
+using FOI.PI.MusicBandApp.Desktop.View.Band;
+using FOI.PI.MusicBandApp.Desktop.View.User;
 using System.Linq;
 
 namespace FOI.PI.MusicBandApp.Desktop
@@ -50,6 +52,14 @@ namespace FOI.PI.MusicBandApp.Desktop
                             accountInstance.Id = loginDto.Band.Id;
                             accountInstance.Mail = loginDto.Band.Mail;
                             accountInstance.AccountType = loginDto.Band.AccountType;
+
+                            var bandForm = new FrmGlavna();
+                            bandForm.FormClosed += ((o, s) =>
+                            {
+                                this.Show();
+                            });
+                            this.Hide();
+                            bandForm.Show();
                         }
                     }
                     else if (loginDto.User.AccountFounded)
@@ -66,6 +76,14 @@ namespace FOI.PI.MusicBandApp.Desktop
                             accountInstance.Id = loginDto.User.Id;
                             accountInstance.Mail = loginDto.User.Mail;
                             accountInstance.AccountType = loginDto.User.AccountType;
+
+                            var accountForm = new Home();
+                            accountForm.FormClosed += ((o, s) =>
+                            {
+                                this.Show();
+                            });
+                            this.Hide();
+                            accountForm.Show();
                         }
                     }
                 }

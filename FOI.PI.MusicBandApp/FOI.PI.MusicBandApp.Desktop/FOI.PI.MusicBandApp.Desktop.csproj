@@ -72,6 +72,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>hr-HR.resx</DependentUpon>
     </Compile>
+    <Compile Include="View\Band\FrmGlavna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Band\FrmGlavna.Designer.cs">
+      <DependentUpon>FrmGlavna.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\BandRegistration.resx">
       <DependentUpon>BandRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Band\FrmGlavna.resx">
+      <DependentUpon>FrmGlavna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -141,7 +150,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="View\Band\" />
     <Folder Include="View\User\" />
   </ItemGroup>
   <ItemGroup>

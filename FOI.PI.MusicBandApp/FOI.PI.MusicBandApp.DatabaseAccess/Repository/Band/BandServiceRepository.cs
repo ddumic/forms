@@ -108,6 +108,29 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Band
             }
         }
 
+        public List<RepertoireDto> GetBandRepertoire(int bandId)
+        {
+            using (var db = new MusicBandAppEntities())
+            {
+                var response = new List<RepertoireDto>();
+                var band = db.Bend.Where(x => x.id_bend == bandId).FirstOrDefault();
+                var songs = band.Pjesma1;
+                foreach (var song in songs)
+                {
+                    response.Add(new RepertoireDto()
+                    {
+                        Duration = song.trajanje.ToString(),
+                        Gender = song.Zanr.naziv,
+                        Name = song.naziv,
+                        Performer = song.izvodac,
+                        Year = song.godina_izdanja
+                    });
+                }
+
+                return response;
+            }
+        }
+
         #region Helper
         private BandDto MapBand(Bend foundedBand)
         {

@@ -35,6 +35,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.bandList = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.repertoireList = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bandList)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.repertoireList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.image)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,6 +100,7 @@
             this.bandList.Location = new System.Drawing.Point(12, 31);
             this.bandList.MultiSelect = false;
             this.bandList.Name = "bandList";
+            this.bandList.ReadOnly = true;
             this.bandList.RowTemplate.Height = 24;
             this.bandList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bandList.Size = new System.Drawing.Size(927, 167);
@@ -105,6 +108,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.repertoireList);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -122,15 +126,24 @@
             this.groupBox1.Controls.Add(this.name);
             this.groupBox1.Location = new System.Drawing.Point(12, 214);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(493, 310);
+            this.groupBox1.Size = new System.Drawing.Size(927, 310);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Podaci";
             // 
+            // repertoireList
+            // 
+            this.repertoireList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.repertoireList.Location = new System.Drawing.Point(622, 21);
+            this.repertoireList.Name = "repertoireList";
+            this.repertoireList.RowTemplate.Height = 24;
+            this.repertoireList.Size = new System.Drawing.Size(299, 190);
+            this.repertoireList.TabIndex = 14;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(201, 232);
+            this.label7.Location = new System.Drawing.Point(330, 188);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 17);
             this.label7.TabIndex = 13;
@@ -139,7 +152,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(178, 204);
+            this.label6.Location = new System.Drawing.Point(307, 160);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 17);
             this.label6.TabIndex = 12;
@@ -148,7 +161,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(164, 176);
+            this.label5.Location = new System.Drawing.Point(293, 132);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 17);
             this.label5.TabIndex = 11;
@@ -157,7 +170,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(164, 148);
+            this.label4.Location = new System.Drawing.Point(293, 104);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 17);
             this.label4.TabIndex = 10;
@@ -166,7 +179,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(143, 120);
+            this.label3.Location = new System.Drawing.Point(272, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 17);
             this.label3.TabIndex = 9;
@@ -175,7 +188,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(185, 92);
+            this.label2.Location = new System.Drawing.Point(314, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 17);
             this.label2.TabIndex = 8;
@@ -184,7 +197,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(191, 64);
+            this.label1.Location = new System.Drawing.Point(320, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 17);
             this.label1.TabIndex = 7;
@@ -192,15 +205,15 @@
             // 
             // image
             // 
-            this.image.Location = new System.Drawing.Point(6, 36);
+            this.image.Location = new System.Drawing.Point(6, 21);
             this.image.Name = "image";
-            this.image.Size = new System.Drawing.Size(116, 106);
+            this.image.Size = new System.Drawing.Size(262, 190);
             this.image.TabIndex = 5;
             this.image.TabStop = false;
             // 
             // mail
             // 
-            this.mail.Location = new System.Drawing.Point(244, 232);
+            this.mail.Location = new System.Drawing.Point(373, 188);
             this.mail.Name = "mail";
             this.mail.ReadOnly = true;
             this.mail.Size = new System.Drawing.Size(243, 22);
@@ -208,7 +221,7 @@
             // 
             // contact
             // 
-            this.contact.Location = new System.Drawing.Point(244, 204);
+            this.contact.Location = new System.Drawing.Point(373, 160);
             this.contact.Name = "contact";
             this.contact.ReadOnly = true;
             this.contact.Size = new System.Drawing.Size(243, 22);
@@ -216,7 +229,7 @@
             // 
             // instagram
             // 
-            this.instagram.Location = new System.Drawing.Point(244, 176);
+            this.instagram.Location = new System.Drawing.Point(373, 132);
             this.instagram.Name = "instagram";
             this.instagram.ReadOnly = true;
             this.instagram.Size = new System.Drawing.Size(243, 22);
@@ -224,7 +237,7 @@
             // 
             // facebook
             // 
-            this.facebook.Location = new System.Drawing.Point(244, 148);
+            this.facebook.Location = new System.Drawing.Point(373, 104);
             this.facebook.Name = "facebook";
             this.facebook.ReadOnly = true;
             this.facebook.Size = new System.Drawing.Size(243, 22);
@@ -232,7 +245,7 @@
             // 
             // webpage
             // 
-            this.webpage.Location = new System.Drawing.Point(244, 120);
+            this.webpage.Location = new System.Drawing.Point(373, 76);
             this.webpage.Name = "webpage";
             this.webpage.ReadOnly = true;
             this.webpage.Size = new System.Drawing.Size(243, 22);
@@ -240,7 +253,7 @@
             // 
             // city
             // 
-            this.city.Location = new System.Drawing.Point(244, 92);
+            this.city.Location = new System.Drawing.Point(373, 48);
             this.city.Name = "city";
             this.city.ReadOnly = true;
             this.city.Size = new System.Drawing.Size(243, 22);
@@ -248,7 +261,7 @@
             // 
             // name
             // 
-            this.name.Location = new System.Drawing.Point(244, 64);
+            this.name.Location = new System.Drawing.Point(373, 20);
             this.name.Name = "name";
             this.name.ReadOnly = true;
             this.name.Size = new System.Drawing.Size(243, 22);
@@ -270,6 +283,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bandList)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.repertoireList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -299,5 +313,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox image;
+        private System.Windows.Forms.DataGridView repertoireList;
     }
 }

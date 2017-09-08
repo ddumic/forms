@@ -44,6 +44,7 @@
     <Compile Include="Account\IAccountServiceRepository.cs" />
     <Compile Include="Band\BandDto.cs" />
     <Compile Include="Band\IBandServiceRepository.cs" />
+    <Compile Include="Band\RepertoireDto.cs" />
     <Compile Include="ErrorDto.cs" />
     <Compile Include="LoginDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

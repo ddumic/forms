@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewModel\BandListItemViewModel.cs" />
+    <Compile Include="ViewModel\RepertoireViewModel.cs" />
     <Compile Include="View\BandRegistration.cs">
       <SubType>Form</SubType>
     </Compile>

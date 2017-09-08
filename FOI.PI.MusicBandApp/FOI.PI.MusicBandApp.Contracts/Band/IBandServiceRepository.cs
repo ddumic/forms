@@ -8,5 +8,6 @@ namespace FOI.PI.MusicBandApp.Contracts.Band
         ErrorDto Register(BandDto band);
         BandDto GetBand(string mail, string password);
         List<BandDto> GetAllBands();
+        List<RepertoireDto> GetBandRepertoire(int bandId);
     }
 }

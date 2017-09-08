@@ -34,7 +34,9 @@ namespace FOI.PI.MusicBandApp.Desktop.View.User
             {
                 if (e.StateChanged == DataGridViewElementStates.Selected)
                 {
-                    MapFromBandDto(_bandManagementService.GetBandDetails(int.Parse(bandList[0, e.Row.Index].Value.ToString())));
+                    UpdateFromBandDto(_bandManagementService.GetBandDetails(int.Parse(bandList[0, e.Row.Index].Value.ToString())));
+
+                    UpdateFromRepertoireDto(_bandManagementService.GetBandRepertoire(int.Parse(bandList[0, e.Row.Index].Value.ToString())));
                 }
             });
         }
@@ -56,7 +58,7 @@ namespace FOI.PI.MusicBandApp.Desktop.View.User
             return response;
         }
 
-        private void MapFromBandDto(BandDto band)
+        private void UpdateFromBandDto(BandDto band)
         {
             name.Text = band.Name;
             city.Text = band.City;
@@ -77,6 +79,23 @@ namespace FOI.PI.MusicBandApp.Desktop.View.User
                 Bitmap bitMap = new Bitmap(memoryStream, false);
                 return bitMap;
             }
+        }
+
+        private void UpdateFromRepertoireDto(List<RepertoireDto> songs)
+        {
+            var repertoire = new List<RepertoireViewModel>();
+
+            foreach (var song in songs)
+            {
+                repertoire.Add(new RepertoireViewModel()
+                {
+                    Duration = song.Duration,
+                    Name = song.Name,
+                    Performer = song.Performer
+                });
+            }
+
+            repertoireList.DataSource = repertoire;
         }
         #endregion
     }

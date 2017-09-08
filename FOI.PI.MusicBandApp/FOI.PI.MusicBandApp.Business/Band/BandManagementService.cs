@@ -64,5 +64,10 @@ namespace FOI.PI.MusicBandApp.Business.Band
                 };
             }
         }
+
+        public List<RepertoireDto> GetBandRepertoire(int bandId)
+        {
+            return _bandServiceRepository.GetBandRepertoire(bandId);
+        }
     }
 }

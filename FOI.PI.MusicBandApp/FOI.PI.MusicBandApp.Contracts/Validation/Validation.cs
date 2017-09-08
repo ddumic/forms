@@ -20,6 +20,12 @@ namespace FOI.PI.MusicBandApp.Contracts.Validation
                         ErrorCode = 2,
                         ErrorMesssage = ResourceHelper.ResourceKey.ResultSetHasMultipleValues
                     };
+                case 3:
+                    return new ErrorDto()
+                    {
+                        ErrorCode = 3,
+                        ErrorMesssage = ResourceHelper.ResourceKey.MailAlreadyTaken
+                    };
                 default:
                     throw new System.NotSupportedException();
             }

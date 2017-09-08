@@ -27,7 +27,7 @@ namespace FOI.PI.MusicBandApp.Business.Account
             if (user.Errors.Any())
             {
                 foreach (var error in user.Errors)
-                    translatedErrors.Add(Validation.TranslateValidationStatusCode(error.ErrorCode));
+                    translatedErrors.Add(Validation.TranslateValidationStatusCode(error.ErrorCode.Value));
             }
             user.Errors = translatedErrors;
 
@@ -37,7 +37,7 @@ namespace FOI.PI.MusicBandApp.Business.Account
             if (band.Errors.Any())
             {
                 foreach (var error in band.Errors)
-                    translatedErrors.Add(Validation.TranslateValidationStatusCode(error.ErrorCode));
+                    translatedErrors.Add(Validation.TranslateValidationStatusCode(error.ErrorCode.Value));
             }
             band.Errors = translatedErrors;
 
@@ -59,7 +59,10 @@ namespace FOI.PI.MusicBandApp.Business.Account
         {
             try
             {
-                return _accountServiceRepository.Register(account);
+                var response = _accountServiceRepository.Register(account);
+                if (response.ErrorCode.HasValue)
+                    return Validation.TranslateValidationStatusCode(response.ErrorCode.Value);
+                return response;
             }
             catch (Exception ex)
             {

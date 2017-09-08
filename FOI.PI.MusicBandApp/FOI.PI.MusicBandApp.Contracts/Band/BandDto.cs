@@ -16,6 +16,7 @@ namespace FOI.PI.MusicBandApp.Contracts.Band
         public string InstagramPage { get; set; }
         public string Contact { get; set; }
         public string Mail { get; set; }
+        public string Password { get; set; }
         public bool BandFounded { get; set; }
         public byte[] Image { get; set; }
         public IList<ErrorDto> Errors { get; set; }

@@ -3,6 +3,6 @@
     public class ErrorDto
     {
         public string ErrorMesssage { get; set; }
-        public int ErrorCode { get; set; }
+        public int? ErrorCode { get; set; }
     }
 }

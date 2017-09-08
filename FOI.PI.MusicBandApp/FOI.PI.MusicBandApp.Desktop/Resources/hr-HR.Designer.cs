@@ -70,6 +70,15 @@ namespace FOI.PI.MusicBandApp.Desktop.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pogrešna putanja do slike.
+        /// </summary>
+        internal static string ImageNotValid {
+            get {
+                return ResourceManager.GetString("ImageNotValid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mail nije u pravilnom formatu.
         /// </summary>
         internal static string IncorrectEmailFormat {
@@ -79,11 +88,29 @@ namespace FOI.PI.MusicBandApp.Desktop.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Broj nije u ispravnom formazu.
+        /// </summary>
+        internal static string IncorrectNumberFormat {
+            get {
+                return ResourceManager.GetString("IncorrectNumberFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Popunite sva polja.
         /// </summary>
         internal static string InsertAllValues {
             get {
                 return ResourceManager.GetString("InsertAllValues", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mail se već koristi.
+        /// </summary>
+        internal static string MailAlreadyTaken {
+            get {
+                return ResourceManager.GetString("MailAlreadyTaken", resourceCulture);
             }
         }
         

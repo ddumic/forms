@@ -37,6 +37,7 @@
             this.lbl_user = new System.Windows.Forms.Label();
             this.btn_Registracija = new System.Windows.Forms.Button();
             this.btn_Prijava = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,10 +102,10 @@
             // 
             // btn_Registracija
             // 
-            this.btn_Registracija.Location = new System.Drawing.Point(134, 396);
+            this.btn_Registracija.Location = new System.Drawing.Point(78, 378);
             this.btn_Registracija.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Registracija.Name = "btn_Registracija";
-            this.btn_Registracija.Size = new System.Drawing.Size(131, 33);
+            this.btn_Registracija.Size = new System.Drawing.Size(227, 33);
             this.btn_Registracija.TabIndex = 9;
             this.btn_Registracija.Text = "REGISTRACIJA";
             this.btn_Registracija.UseVisualStyleBackColor = true;
@@ -112,20 +113,32 @@
             // 
             // btn_Prijava
             // 
-            this.btn_Prijava.Location = new System.Drawing.Point(143, 336);
+            this.btn_Prijava.Location = new System.Drawing.Point(78, 338);
             this.btn_Prijava.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Prijava.Name = "btn_Prijava";
-            this.btn_Prijava.Size = new System.Drawing.Size(112, 32);
+            this.btn_Prijava.Size = new System.Drawing.Size(227, 32);
             this.btn_Prijava.TabIndex = 8;
             this.btn_Prijava.Text = "PRIJAVA";
             this.btn_Prijava.UseVisualStyleBackColor = true;
             this.btn_Prijava.Click += new System.EventHandler(this.btn_Prijava_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(78, 419);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(227, 33);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "REGISTRACIJA BENDA";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 471);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl_naziv);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.password);
@@ -152,6 +165,7 @@
         private System.Windows.Forms.Label lbl_user;
         private System.Windows.Forms.Button btn_Registracija;
         private System.Windows.Forms.Button btn_Prijava;
+        private System.Windows.Forms.Button button1;
     }
 }
 

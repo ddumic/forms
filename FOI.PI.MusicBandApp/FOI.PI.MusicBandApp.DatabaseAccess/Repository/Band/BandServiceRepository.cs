@@ -39,6 +39,13 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Band
         {
             using (var db = new MusicBandAppEntities())
             {
+                if (db.Osoba.Where(x => x.mail == band.Mail).Any())
+                {
+                    return new ErrorDto()
+                    {
+                        ErrorCode = (int)ValidationStatusCode.MailAlreadyTaken
+                    };
+                }
                 db.Bend.Add(new Bend()
                 {
                     broj_clanova = band.MemberCount,
@@ -50,6 +57,7 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Band
                     mjesto = band.City,
                     naziv = band.Name,
                     slika = band.Image,
+                    lozinka = band.Password,
                     web_stranica = band.WebPage
                 });
                 db.SaveChanges();

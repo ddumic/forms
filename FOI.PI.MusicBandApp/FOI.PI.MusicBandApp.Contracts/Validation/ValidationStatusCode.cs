@@ -3,6 +3,7 @@
     public enum ValidationStatusCode
     {
         UserDoesNotExists = 1,
-        ResultsetHasMoreItems = 2
+        ResultsetHasMoreItems = 2,
+        MailAlreadyTaken = 3
     }
 }

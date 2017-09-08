@@ -1,4 +1,5 @@
 ﻿using FOI.PI.MusicBandApp.Business.Account;
+using FOI.PI.MusicBandApp.Business.Band;
 using FOI.PI.MusicBandApp.Common.Extensions;
 using FOI.PI.MusicBandApp.Common.Resources;
 using FOI.PI.MusicBandApp.DatabaseAccess.Repository.Account;
@@ -74,6 +75,11 @@ namespace FOI.PI.MusicBandApp.Desktop
         private void btn_Registracija_Click(object sender, System.EventArgs e)
         {
             new Registration(new AccountManagementService(new AccountServiceRepository(), new BandServiceRepository())).Show();
+        }
+
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            new BandRegistration(new BandManagementService(new BandServiceRepository())).Show();
         }
     }
 }

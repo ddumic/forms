@@ -47,6 +47,14 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Account
         {
             using (var db = new MusicBandAppEntities())
             {
+                if (db.Bend.Where(x => x.e_mail == account.Mail).Any())
+                {
+                    return new ErrorDto()
+                    {
+                        ErrorCode = (int)ValidationStatusCode.MailAlreadyTaken
+                    };
+                }
+
                 db.Osoba.Add(new Osoba()
                 {
                     adresa = account.Address,

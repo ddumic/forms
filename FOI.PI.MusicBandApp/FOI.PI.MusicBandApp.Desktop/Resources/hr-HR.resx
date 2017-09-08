@@ -120,11 +120,20 @@
   <data name="Error" xml:space="preserve">
     <value>Pogreška</value>
   </data>
+  <data name="ImageNotValid" xml:space="preserve">
+    <value>Pogrešna putanja do slike</value>
+  </data>
   <data name="IncorrectEmailFormat" xml:space="preserve">
     <value>Mail nije u pravilnom formatu</value>
   </data>
+  <data name="IncorrectNumberFormat" xml:space="preserve">
+    <value>Broj nije u ispravnom formazu</value>
+  </data>
   <data name="InsertAllValues" xml:space="preserve">
     <value>Popunite sva polja</value>
+  </data>
+  <data name="MailAlreadyTaken" xml:space="preserve">
+    <value>Mail se već koristi</value>
   </data>
   <data name="RegisteredSuccessfully" xml:space="preserve">
     <value>Registracija uspješno provedena!</value>

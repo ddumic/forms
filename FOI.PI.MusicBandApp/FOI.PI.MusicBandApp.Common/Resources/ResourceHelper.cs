@@ -11,6 +11,9 @@
             public static readonly string RegisteredSuccessfully = "RegisteredSuccessfully";
             public static readonly string Success = "Success";
             public static readonly string IncorrectEmailFormat = "IncorrectEmailFormat";
+            public static readonly string IncorrectNumberFormat = "IncorrectNumberFormat";
+            public static readonly string MailAlreadyTaken = "MailAlreadyTaken";
+            public static readonly string ImageNotValid = "ImageNotValid";
         }
     }
 }

@@ -77,13 +77,24 @@ namespace FOI.PI.MusicBandApp.Desktop
                             accountInstance.Mail = loginDto.User.Mail;
                             accountInstance.AccountType = loginDto.User.AccountType;
 
-                            var accountForm = new Home();
+                            var accountForm = new Home(new BandManagementService(new BandServiceRepository()));
                             accountForm.FormClosed += ((o, s) =>
                             {
                                 this.Show();
                             });
                             this.Hide();
                             accountForm.Show();
+                        }
+                    }
+                    else
+                    {
+                        if (loginDto.User.Errors.Any())
+                        {
+                            MessageBoxHelper.ShowMessageBox(loginDto.User.Errors.First().ErrorMesssage);
+                        }
+                        else if (loginDto.Band.Errors.Any())
+                        {
+                            MessageBoxHelper.ShowMessageBox(loginDto.Band.Errors.First().ErrorMesssage);
                         }
                     }
                 }

@@ -60,16 +60,10 @@ namespace FOI.PI.MusicBandApp.Desktop.View
                 Name = name.Text,
                 Surname = surname.Text,
                 Password = password.Text,
-                AccountType = MapAccountType(),
                 Errors = MapErrors()
             };
 
             return account;
-        }
-
-        private int? MapAccountType()
-        {
-            return string.Compare(accountType.Text, "Bend") == 0 ? 1 : 2;
         }
 
         private List<ErrorDto> MapErrors()
@@ -82,8 +76,7 @@ namespace FOI.PI.MusicBandApp.Desktop.View
                 || city.IsInputEmpty()
                 || gender.IsComboBoxItemSelected()
                 || mail.IsInputEmpty()
-                || password.IsInputEmpty()
-                || accountType.IsComboBoxItemSelected())
+                || password.IsInputEmpty())
                 errorList.Add(new ErrorDto() { ErrorMesssage = ResourceHelper.ResourceKey.InputFieldsMissing });
 
             else if (!mail.IsInputMail())

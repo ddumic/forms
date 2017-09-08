@@ -53,6 +53,10 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess
                 .IsUnicode(false);
 
             modelBuilder.Entity<Bend>()
+                .Property(e => e.lozinka)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Bend>()
                 .HasMany(e => e.Financije)
                 .WithRequired(e => e.Bend)
                 .WillCascadeOnDelete(false);
@@ -147,8 +151,9 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess
 
             modelBuilder.Entity<TipKorisnika>()
                 .HasMany(e => e.Osoba)
-                .WithOptional(e => e.TipKorisnika)
-                .HasForeignKey(e => e.tip_korisnika);
+                .WithRequired(e => e.TipKorisnika)
+                .HasForeignKey(e => e.tip_korisnika)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Zanr>()
                 .Property(e => e.naziv)

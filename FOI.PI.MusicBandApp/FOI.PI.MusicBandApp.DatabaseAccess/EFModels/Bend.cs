@@ -47,10 +47,17 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess
         public string kontakt { get; set; }
 
         [Column("e-mail")]
-        [StringLength(45)]
+        [Required]
+        [StringLength(100)]
         public string e_mail { get; set; }
 
         public byte[] slika { get; set; }
+
+        [Required]
+        [StringLength(100)]
+        public string lozinka { get; set; }
+
+        public int tip_korisnika { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Financije> Financije { get; set; }

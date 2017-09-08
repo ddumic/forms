@@ -39,10 +39,11 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess
         [StringLength(100)]
         public string mail { get; set; }
 
+        [Required]
         [StringLength(100)]
         public string lozinka { get; set; }
 
-        public int? tip_korisnika { get; set; }
+        public int tip_korisnika { get; set; }
 
         public virtual Bend Bend { get; set; }
 

@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="Account\AccountManagementService.cs" />
     <Compile Include="Account\IAccountManagementService.cs" />
+    <Compile Include="Band\BandManagementService.cs" />
+    <Compile Include="Band\IBandManagementService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +56,7 @@
       <Name>FOI.PI.MusicBandApp.DatabaseAccess</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

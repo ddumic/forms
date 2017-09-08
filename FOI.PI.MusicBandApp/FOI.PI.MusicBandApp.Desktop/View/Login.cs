@@ -1,7 +1,8 @@
 ﻿using FOI.PI.MusicBandApp.Business.Account;
 using FOI.PI.MusicBandApp.Common.Extensions;
 using FOI.PI.MusicBandApp.Common.Resources;
-using FOI.PI.MusicBandApp.DatabaseAccess.Repository;
+using FOI.PI.MusicBandApp.DatabaseAccess.Repository.Account;
+using FOI.PI.MusicBandApp.DatabaseAccess.Repository.Band;
 using FOI.PI.MusicBandApp.Desktop.Helper;
 using FOI.PI.MusicBandApp.Desktop.View;
 using System.Linq;
@@ -27,21 +28,52 @@ namespace FOI.PI.MusicBandApp.Desktop
             }
             else
             {
-                var user = _accountManagementService.Login(mail.Text, password.Text);
-                if (user.Errors.Any())
+                var loginDto = _accountManagementService.Login(mail.Text, password.Text);
+                if (loginDto.Errors.Any())
                 {
-                    MessageBoxHelper.ShowMessageBox(user.Errors.First().ErrorMesssage);
+                    MessageBoxHelper.ShowMessageBox(loginDto.Errors.First().ErrorMesssage);
                 }
                 else
                 {
-                    //logiran user
+                    if (loginDto.Band.BandFounded)
+                    {
+                        //pokusava se logirati band
+                        if (loginDto.Band.Errors.Any())
+                        {
+                            MessageBoxHelper.ShowMessageBox(loginDto.Band.Errors.First().ErrorMesssage);
+                        }
+                        else
+                        {
+                            //band je uspjesno logiran
+                            var accountInstance = AccountHelper.GetInstance();
+                            accountInstance.Id = loginDto.Band.Id;
+                            accountInstance.Mail = loginDto.Band.Mail;
+                            accountInstance.AccountType = loginDto.Band.AccountType;
+                        }
+                    }
+                    else if (loginDto.User.AccountFounded)
+                    {
+                        //pokusava se logirati user
+                        if (loginDto.User.Errors.Any())
+                        {
+                            MessageBoxHelper.ShowMessageBox(loginDto.User.Errors.First().ErrorMesssage);
+                        }
+                        else
+                        {
+                            //user je uspjesno logiran
+                            var accountInstance = AccountHelper.GetInstance();
+                            accountInstance.Id = loginDto.User.Id;
+                            accountInstance.Mail = loginDto.User.Mail;
+                            accountInstance.AccountType = loginDto.User.AccountType;
+                        }
+                    }
                 }
             }
         }
 
         private void btn_Registracija_Click(object sender, System.EventArgs e)
         {
-            new Registration(new AccountManagementService(new AccountServiceRepository())).Show();
+            new Registration(new AccountManagementService(new AccountServiceRepository(), new BandServiceRepository())).Show();
         }
     }
 }

@@ -55,6 +55,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="View\BandRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BandRegistration.Designer.cs">
+      <DependentUpon>BandRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\AccountHelper.cs" />
     <Compile Include="Helper\FormHelper.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,7 +137,10 @@
       <Name>FOI.PI.MusicBandApp.DatabaseAccess</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="View\Band\" />
+    <Folder Include="View\User\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Icons\icon.png" />
   </ItemGroup>

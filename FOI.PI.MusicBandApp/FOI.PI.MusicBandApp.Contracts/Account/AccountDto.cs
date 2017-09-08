@@ -13,6 +13,7 @@ namespace FOI.PI.MusicBandApp.Contracts.Account
         public string Mail { get; set; }
         public string Password { get; set; }
         public int? AccountType { get; set; }
+        public bool AccountFounded { get; set; }
         public IList<ErrorDto> Errors { get; set; }
 
         public AccountDto()

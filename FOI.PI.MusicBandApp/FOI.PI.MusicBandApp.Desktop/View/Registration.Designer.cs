@@ -45,10 +45,8 @@
             this.gender = new System.Windows.Forms.ComboBox();
             this.mail = new System.Windows.Forms.TextBox();
             this.password = new System.Windows.Forms.TextBox();
-            this.accountType = new System.Windows.Forms.ComboBox();
             this.cancel = new System.Windows.Forms.Button();
             this.register = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -205,21 +203,9 @@
             this.password.Size = new System.Drawing.Size(171, 22);
             this.password.TabIndex = 35;
             // 
-            // accountType
-            // 
-            this.accountType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.accountType.FormattingEnabled = true;
-            this.accountType.Items.AddRange(new object[] {
-            "Bend",
-            "Korisnik"});
-            this.accountType.Location = new System.Drawing.Point(121, 442);
-            this.accountType.Name = "accountType";
-            this.accountType.Size = new System.Drawing.Size(171, 24);
-            this.accountType.TabIndex = 36;
-            // 
             // cancel
             // 
-            this.cancel.Location = new System.Drawing.Point(121, 501);
+            this.cancel.Location = new System.Drawing.Point(121, 471);
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(171, 23);
             this.cancel.TabIndex = 39;
@@ -229,7 +215,7 @@
             // 
             // register
             // 
-            this.register.Location = new System.Drawing.Point(121, 472);
+            this.register.Location = new System.Drawing.Point(121, 442);
             this.register.Name = "register";
             this.register.Size = new System.Drawing.Size(171, 23);
             this.register.TabIndex = 38;
@@ -237,25 +223,13 @@
             this.register.UseVisualStyleBackColor = true;
             this.register.Click += new System.EventHandler(this.register_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 442);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 17);
-            this.label5.TabIndex = 40;
-            this.label5.Text = "Tip korisnika:";
-            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 543);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(404, 513);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.register);
-            this.Controls.Add(this.accountType);
             this.Controls.Add(this.password);
             this.Controls.Add(this.mail);
             this.Controls.Add(this.gender);
@@ -298,9 +272,7 @@
         private System.Windows.Forms.ComboBox gender;
         private System.Windows.Forms.TextBox mail;
         private System.Windows.Forms.TextBox password;
-        private System.Windows.Forms.ComboBox accountType;
         private System.Windows.Forms.Button cancel;
         private System.Windows.Forms.Button register;
-        private System.Windows.Forms.Label label5;
     }
 }

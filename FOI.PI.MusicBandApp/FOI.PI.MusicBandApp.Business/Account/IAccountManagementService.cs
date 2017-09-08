@@ -5,7 +5,7 @@ namespace FOI.PI.MusicBandApp.Business.Account
 {
     public interface IAccountManagementService
     {
-        AccountDto Login(string mail, string password);
+        LoginDto Login(string mail, string password);
         ErrorDto Register(AccountDto account);
     }
 }

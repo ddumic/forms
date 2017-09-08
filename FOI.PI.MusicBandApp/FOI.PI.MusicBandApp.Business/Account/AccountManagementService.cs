@@ -4,19 +4,24 @@ using FOI.PI.MusicBandApp.Contracts.Validation;
 using FOI.PI.MusicBandApp.Contracts;
 using System.Collections.Generic;
 using System;
+using FOI.PI.MusicBandApp.Contracts.Band;
 
 namespace FOI.PI.MusicBandApp.Business.Account
 {
     public class AccountManagementService : IAccountManagementService
     {
         private readonly IAccountServiceRepository _accountServiceRepository;
-        public AccountManagementService(IAccountServiceRepository accountServiceRepository)
+        private readonly IBandServiceRepository _bandServiceRepository;
+
+        public AccountManagementService(IAccountServiceRepository accountServiceRepository, IBandServiceRepository bandServiceRepository)
         {
             _accountServiceRepository = accountServiceRepository;
+            _bandServiceRepository = bandServiceRepository;
         }
 
-        public AccountDto Login(string mail, string password)
+        public LoginDto Login(string mail, string password)
         {
+            //If user exists
             var user = _accountServiceRepository.Login(mail, password);
             var translatedErrors = new List<ErrorDto>();
             if (user.Errors.Any())
@@ -25,7 +30,29 @@ namespace FOI.PI.MusicBandApp.Business.Account
                     translatedErrors.Add(Validation.TranslateValidationStatusCode(error.ErrorCode));
             }
             user.Errors = translatedErrors;
-            return user;
+
+            //If band exists
+            var band = _bandServiceRepository.GetBand(mail, password);
+            translatedErrors = new List<ErrorDto>();
+            if (band.Errors.Any())
+            {
+                foreach (var error in band.Errors)
+                    translatedErrors.Add(Validation.TranslateValidationStatusCode(error.ErrorCode));
+            }
+            band.Errors = translatedErrors;
+
+            var responseDto = new LoginDto()
+            {
+                User = user,
+                Band = band
+            };
+
+            if (band.BandFounded && user.AccountFounded)
+            {
+                responseDto.Errors.Add(Validation.TranslateValidationStatusCode((int)ValidationStatusCode.ResultsetHasMoreItems));
+            }
+
+            return responseDto;
         }
 
         public ErrorDto Register(AccountDto account)

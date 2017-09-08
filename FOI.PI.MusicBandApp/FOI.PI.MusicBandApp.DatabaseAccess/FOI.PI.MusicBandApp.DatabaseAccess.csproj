@@ -58,7 +58,8 @@
     <Compile Include="EFModels\Pjesma.cs" />
     <Compile Include="EFModels\PopisOpreme.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\AccountServiceRepository.cs" />
+    <Compile Include="Repository\Account\AccountServiceRepository.cs" />
+    <Compile Include="Repository\Band\BandServiceRepository.cs" />
     <Compile Include="EFModels\Rezervacija.cs" />
     <Compile Include="EFModels\sysdiagrams.cs" />
     <Compile Include="EFModels\TipKorisnika.cs" />

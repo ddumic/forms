@@ -1,10 +1,9 @@
 ﻿using FOI.PI.MusicBandApp.Contracts;
 using FOI.PI.MusicBandApp.Contracts.Account;
 using FOI.PI.MusicBandApp.Contracts.Validation;
-using System;
 using System.Linq;
 
-namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository
+namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Account
 {
     public class AccountServiceRepository : IAccountServiceRepository
     {
@@ -12,7 +11,7 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository
         {
             using (var db = new MusicBandAppEntities())
             {
-                var user = db.Osoba.Where(x => x.mail == mail && x.lozinka == password);
+                var user = db.Osoba.Where(x => x.mail == mail && x.lozinka == password && x.tip_korisnika != 3);
                 var responseDto = new AccountDto();
                 if (user.Count() > 1)
                 {
@@ -31,6 +30,7 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository
                     responseDto.Mail = loggedUser.mail;
                     responseDto.Name = loggedUser.ime;
                     responseDto.Surname = loggedUser.prezime;
+                    responseDto.AccountFounded = true;
                 }
                 else
                 {
@@ -55,8 +55,7 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository
                     mail = account.Mail,
                     mjesto = account.City,
                     prezime = account.Surname,
-                    spol = account.Gender,
-                    tip_korisnika = account.AccountType
+                    spol = account.Gender
                 });
                 db.SaveChanges();
                 return new ErrorDto();

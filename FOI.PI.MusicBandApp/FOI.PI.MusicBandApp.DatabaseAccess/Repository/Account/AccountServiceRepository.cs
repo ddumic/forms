@@ -110,7 +110,8 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Account
                     mail = account.Mail,
                     mjesto = account.City,
                     prezime = account.Surname,
-                    spol = account.Gender
+                    spol = account.Gender,
+                    tip_korisnika = 2
                 });
                 db.SaveChanges();
                 return new ErrorDto();

@@ -54,13 +54,13 @@ namespace FOI.PI.MusicBandApp.Desktop.View.Band
         }
 
         #region Helper
-        private List<GenreViewModel> MapToGenreViewModel(List<GenreDto> accounts)
+        private List<BaseViewModel> MapToGenreViewModel(List<GenreDto> accounts)
         {
-            var responseDto = new List<GenreViewModel>();
+            var responseDto = new List<BaseViewModel>();
 
             foreach (var account in accounts)
             {
-                responseDto.Add(new GenreViewModel()
+                responseDto.Add(new BaseViewModel()
                 {
                     Id = account.Id,
                     Name = account.Name
@@ -77,7 +77,7 @@ namespace FOI.PI.MusicBandApp.Desktop.View.Band
                 Duration = duration.Text.ToTimeSpan(),
                 Genre = new GenreDto()
                 {
-                    Id = (genreList.SelectedItem as GenreViewModel).Id
+                    Id = (genreList.SelectedItem as BaseViewModel).Id
                 },
                 Performer = performer.Text,
                 Year = year.Text,

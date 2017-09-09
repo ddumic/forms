@@ -28,7 +28,6 @@ namespace FOI.PI.MusicBandApp.Desktop.View.User
         private void GetAllReservations()
         {
             reservationList.DataSource = MapFromReservationDtoList(_accountManagementService.GetAllReservations(AccountHelper.GetInstance().Id));
-            _reservationId = int.Parse(reservationList[0, 0].Value.ToString());
             _selectedRow = 0;
             reservationList.RowStateChanged += ((o, e) =>
             {

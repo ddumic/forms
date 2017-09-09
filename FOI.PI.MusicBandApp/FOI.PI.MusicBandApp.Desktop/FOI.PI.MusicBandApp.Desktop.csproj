@@ -58,7 +58,7 @@
     <Compile Include="ViewModel\BandListItemViewModel.cs" />
     <Compile Include="ViewModel\BandMemberViewModel.cs" />
     <Compile Include="ViewModel\ComboBoxItem.cs" />
-    <Compile Include="ViewModel\GenreViewModel.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\RepertoireViewModel.cs" />
     <Compile Include="ViewModel\ReservationListItemViewModel.cs" />
     <Compile Include="View\BandRegistration.cs">

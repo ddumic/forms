@@ -186,6 +186,9 @@
   <data name="SongAddedSuccessfully" xml:space="preserve">
     <value>Pjesma uspješno dodana</value>
   </data>
+  <data name="SongRemovedSuccessfully" xml:space="preserve">
+    <value>Pjesma uspješno uklonjena</value>
+  </data>
   <data name="Success" xml:space="preserve">
     <value>Potvrda</value>
   </data>

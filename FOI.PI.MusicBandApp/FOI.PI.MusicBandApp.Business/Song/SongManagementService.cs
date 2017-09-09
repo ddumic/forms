@@ -18,6 +18,11 @@ namespace FOI.PI.MusicBandApp.Business.Song
             return _songServiceRepository.AddSong(song);
         }
 
+        public ErrorDto AddBandSong(int bandId, int songId)
+        {
+            return _songServiceRepository.AddBandSong(bandId, songId);
+        }
+
         public ErrorDto DeleteSong(int bandId, int songId)
         {
             return _songServiceRepository.DeleteSong(bandId, songId);
@@ -28,9 +33,14 @@ namespace FOI.PI.MusicBandApp.Business.Song
             return _songServiceRepository.GetGenres();
         }
 
-        public List<SongDto> GetSongs(int bandId)
+        public List<SongDto> GetBandSongs(int bandId)
         {
-            return _songServiceRepository.GetSongs(bandId);
+            return _songServiceRepository.GetBandSongs(bandId);
+        }
+
+        public List<SongDto> GetAvailableSongs(int bandId)
+        {
+            return _songServiceRepository.GetAvailableSongs(bandId);
         }
     }
 }

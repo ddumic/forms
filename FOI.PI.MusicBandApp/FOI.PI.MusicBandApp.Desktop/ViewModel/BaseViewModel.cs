@@ -1,6 +1,6 @@
 ﻿namespace FOI.PI.MusicBandApp.Desktop.ViewModel
 {
-    public class GenreViewModel
+    public class BaseViewModel
     {
         public int Id { get; set; }
         public string Name { get; set; }

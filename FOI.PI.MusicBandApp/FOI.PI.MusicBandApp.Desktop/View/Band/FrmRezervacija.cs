@@ -26,7 +26,6 @@ namespace FOI.PI.MusicBandApp.Desktop.View.Band
         private void GetReservations()
         {
             requestList.DataSource = MapFromReservationDtoList(_bandManagementService.GetReservations(AccountHelper.GetInstance().Id));
-            _reservationId = int.Parse(requestList[0, 0].Value.ToString());
             requestList.RowStateChanged += ((o, e) =>
             {
                 if (e.StateChanged == DataGridViewElementStates.Selected)

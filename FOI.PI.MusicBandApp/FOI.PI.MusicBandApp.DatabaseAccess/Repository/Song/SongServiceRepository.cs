@@ -24,9 +24,19 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Song
             }
         }
 
+        public ErrorDto AddBandSong(int bandId, int songId)
+        {
+            using (var db = new MusicBandAppEntities())
+            {
+                var song = db.Pjesma.FirstOrDefault(x => x.id_pjesma == songId);
+                db.Bend.FirstOrDefault(x => x.id_bend == bandId).Pjesma1.Add(song);
+                db.SaveChanges();
+                return new ErrorDto();
+            }
+        }
+
         public ErrorDto DeleteSong(int bandId, int songId)
         {
-            //KRITIČNO
             using (var db = new MusicBandAppEntities())
             {
                 var band = db.Bend.Where(x => x.id_bend == bandId).FirstOrDefault();
@@ -56,13 +66,41 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Song
             }
         }
 
-        public List<SongDto> GetSongs(int bandId)
+        public List<SongDto> GetBandSongs(int bandId)
         {
             using (var db = new MusicBandAppEntities())
             {
                 var responseDto = new List<SongDto>();
 
                 foreach (var song in db.Bend.Where(x => x.id_bend == bandId).FirstOrDefault().Pjesma1)
+                {
+                    responseDto.Add(new SongDto()
+                    {
+                        Duration = song.trajanje,
+                        Genre = new GenreDto()
+                        {
+                            Description = song.Zanr.opis,
+                            Id = song.Zanr.id_zanr,
+                            Name = song.Zanr.naziv
+                        },
+                        Name = song.naziv,
+                        Performer = song.izvodac,
+                        Id = song.id_pjesma,
+                        Year = song.godina_izdanja
+                    });
+                }
+
+                return responseDto;
+            }
+        }
+
+        public List<SongDto> GetAvailableSongs(int bandId)
+        {
+            using (var db = new MusicBandAppEntities())
+            {
+                var responseDto = new List<SongDto>();
+
+                foreach (var song in db.Pjesma.Where(x => x.Bend.id_bend != bandId))
                 {
                     responseDto.Add(new SongDto()
                     {

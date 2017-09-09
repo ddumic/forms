@@ -28,7 +28,6 @@ namespace FOI.PI.MusicBandApp.Desktop.View.Band
         private void GetMembers()
         {
             members.DataSource = MapFromAccountDto(_accountManagementService.GetBandMembers(AccountHelper.GetInstance().Id));
-            _memberId = int.Parse(members[0, 0].Value.ToString());
             members.RowStateChanged += ((o, e) =>
             {
                 if (e.StateChanged == DataGridViewElementStates.Selected)

@@ -268,6 +268,15 @@ namespace FOI.PI.MusicBandApp.Desktop.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pjesma uspješno uklonjena.
+        /// </summary>
+        internal static string SongRemovedSuccessfully {
+            get {
+                return ResourceManager.GetString("SongRemovedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Potvrda.
         /// </summary>
         internal static string Success {

@@ -29,6 +29,7 @@
             public static readonly string MemberAddedSuccessfully = "MemberAddedSuccessfully";
             public static readonly string SongAddedSuccessfully = "SongAddedSuccessfully";
             public static readonly string IncorrectTimeSpanFormat = "IncorrectTimeSpanFormat";
+            public static readonly string SongRemovedSuccessfully = "SongRemovedSuccessfully";
         }
     }
 }

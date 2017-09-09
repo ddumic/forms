@@ -41,9 +41,31 @@ namespace FOI.PI.MusicBandApp.Desktop.View.Band
             }
             else
             {
-                MessageBoxHelper.ShowMessageBox(ResourceHelper.ResourceKey.BandDeletedSucessfully, true);
+                MessageBoxHelper.ShowMessageBox(ResourceHelper.ResourceKey.BandDeletedSuccessfully, true);
                 AccountHelper.Logout();
                 this.Close();
+            }
+        }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+            var band = MapFromForm();
+            if (band.Errors.Any())
+            {
+                MessageBoxHelper.ShowMessageBox(band.Errors.First().ErrorMesssage);
+            }
+            else
+            {
+                var response = _bandManagementService.UpdateBand(band);
+                if (!string.IsNullOrEmpty(response.ErrorMesssage))
+                {
+                    MessageBoxHelper.ShowMessageBox(response.ErrorMesssage);
+                }
+                else
+                {
+                    MessageBoxHelper.ShowMessageBox(ResourceHelper.ResourceKey.BandUpdatedSuccessfully, true);
+                    GetBandData();
+                }
             }
         }
 
@@ -76,6 +98,8 @@ namespace FOI.PI.MusicBandApp.Desktop.View.Band
                 Name = name.Text,
                 Password = password.Text,
                 WebPage = webPage.Text,
+                Id = AccountHelper.GetInstance().Id,
+                Image = imageBox.Image.ToByteArray(),
                 Errors = MapErrors()
             };
 

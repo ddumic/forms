@@ -88,5 +88,22 @@ namespace FOI.PI.MusicBandApp.Business.Band
             }
         }
 
+        public ErrorDto UpdateBand(BandDto band)
+        {
+            try
+            {
+                var response = _bandServiceRepository.UpdateBand(band);
+                if (response.ErrorCode.HasValue)
+                    return Validation.TranslateValidationStatusCode(response.ErrorCode.Value);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return new ErrorDto()
+                {
+                    ErrorMesssage = ex.Message
+                };
+            }
+        }
     }
 }

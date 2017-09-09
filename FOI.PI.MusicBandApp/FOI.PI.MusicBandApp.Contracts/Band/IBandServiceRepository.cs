@@ -10,5 +10,6 @@ namespace FOI.PI.MusicBandApp.Contracts.Band
         List<BandDto> GetAllBands();
         List<RepertoireDto> GetBandRepertoire(int bandId);
         ErrorDto DeleteBand(int bandId);
+        ErrorDto UpdateBand(BandDto band);
     }
 }

@@ -150,6 +150,41 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Band
             }
         }
 
+        public ErrorDto UpdateBand(BandDto band)
+        {
+            using (var db = new MusicBandAppEntities())
+            {
+                var responseDto = new ErrorDto();
+                var resultSet = db.Bend.Where(x => x.id_bend == band.Id);
+
+                if (resultSet.Count() > 1)
+                {
+                    responseDto.ErrorCode = (int)ValidationStatusCode.ResultsetHasMoreItems;
+                }
+                else if (resultSet.Any())
+                {
+                    var foundedBand = resultSet.FirstOrDefault();
+                    foundedBand.broj_clanova = band.MemberCount;
+                    foundedBand.datum_osnivanja = band.Founded;
+                    foundedBand.e_mail = band.Mail;
+                    foundedBand.facebook = band.FacebookPage;
+                    foundedBand.instagram = band.InstagramPage;
+                    foundedBand.kontakt = band.Contact;
+                    foundedBand.lozinka = band.Password;
+                    foundedBand.mjesto = band.City;
+                    foundedBand.naziv = band.Name;
+                    foundedBand.slika = band.Image;
+                    db.SaveChanges();
+                }
+                else
+                {
+                    responseDto.ErrorCode = (int)ValidationStatusCode.UserDoesNotExists;
+                }
+
+                return responseDto;
+            }
+        }
+
         #region Helper
         private BandDto MapBand(Bend foundedBand)
         {

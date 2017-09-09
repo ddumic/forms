@@ -120,6 +120,9 @@
   <data name="BandDeletedSucessfully" xml:space="preserve">
     <value>Bend je uspješno izbrisan</value>
   </data>
+  <data name="BandUpdatedSuccessfully" xml:space="preserve">
+    <value>Bend je uspješno ažuriran</value>
+  </data>
   <data name="CannotSubmitReservation" xml:space="preserve">
     <value>Rezervaciju nije moguće potvrditi! Provjerite da li postoji iznos te da li je status 'Zatrazena'</value>
   </data>

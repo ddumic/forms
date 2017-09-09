@@ -224,6 +224,7 @@
             this.save.TabIndex = 6;
             this.save.Text = "SPREMI";
             this.save.UseVisualStyleBackColor = true;
+            this.save.Click += new System.EventHandler(this.save_Click);
             // 
             // password
             // 

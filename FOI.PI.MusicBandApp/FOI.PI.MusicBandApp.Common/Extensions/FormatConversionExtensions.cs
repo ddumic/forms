@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 
 namespace FOI.PI.MusicBandApp.Common.Extensions
@@ -17,7 +18,7 @@ namespace FOI.PI.MusicBandApp.Common.Extensions
             {
                 using (var memoryStram = new MemoryStream())
                 {
-                    new Bitmap(path).Save(memoryStram, System.Drawing.Imaging.ImageFormat.Gif);
+                    new Bitmap(path).Save(memoryStram, ImageFormat.Png);
                     return memoryStram.ToArray();
                 }
             }
@@ -39,7 +40,7 @@ namespace FOI.PI.MusicBandApp.Common.Extensions
             }
         }
 
-        public static Bitmap ToImage(this byte[] blob)
+        public static Image ToImage(this byte[] blob)
         {
             using (var memoryStream = new MemoryStream())
             {
@@ -47,6 +48,15 @@ namespace FOI.PI.MusicBandApp.Common.Extensions
                 memoryStream.Write(pData, 0, Convert.ToInt32(pData.Length));
                 Bitmap bitMap = new Bitmap(memoryStream, false);
                 return bitMap;
+            }
+        }
+
+        public static byte[] ToByteArray(this Image image)
+        {
+            using (var ms = new MemoryStream())
+            {
+                image.Save(ms, ImageFormat.Png);
+                return ms.ToArray();
             }
         }
     }

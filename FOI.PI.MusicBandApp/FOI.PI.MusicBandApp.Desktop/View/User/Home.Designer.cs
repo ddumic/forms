@@ -36,6 +36,7 @@
             this.bandList = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.note = new System.Windows.Forms.RichTextBox();
             this.reserve = new System.Windows.Forms.Button();
             this.dateTo = new System.Windows.Forms.DateTimePicker();
             this.dateFrom = new System.Windows.Forms.DateTimePicker();
@@ -57,7 +58,7 @@
             this.webpage = new System.Windows.Forms.TextBox();
             this.city = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.TextBox();
-            this.note = new System.Windows.Forms.RichTextBox();
+            this.pregledRezervacijaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bandList)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -70,6 +71,7 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pregledRezervacijaToolStripMenuItem,
             this.profilToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -88,7 +90,7 @@
             // odjavaToolStripMenuItem
             // 
             this.odjavaToolStripMenuItem.Name = "odjavaToolStripMenuItem";
-            this.odjavaToolStripMenuItem.Size = new System.Drawing.Size(131, 26);
+            this.odjavaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.odjavaToolStripMenuItem.Text = "Odjava";
             this.odjavaToolStripMenuItem.Click += new System.EventHandler(this.odjavaToolStripMenuItem_Click);
             // 
@@ -154,6 +156,14 @@
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Rezerviraj bend";
+            // 
+            // note
+            // 
+            this.note.Location = new System.Drawing.Point(332, 21);
+            this.note.Name = "note";
+            this.note.Size = new System.Drawing.Size(278, 53);
+            this.note.TabIndex = 19;
+            this.note.Text = "";
             // 
             // reserve
             // 
@@ -333,13 +343,12 @@
             this.name.Size = new System.Drawing.Size(243, 22);
             this.name.TabIndex = 0;
             // 
-            // note
+            // pregledRezervacijaToolStripMenuItem
             // 
-            this.note.Location = new System.Drawing.Point(332, 21);
-            this.note.Name = "note";
-            this.note.Size = new System.Drawing.Size(278, 53);
-            this.note.TabIndex = 19;
-            this.note.Text = "";
+            this.pregledRezervacijaToolStripMenuItem.Name = "pregledRezervacijaToolStripMenuItem";
+            this.pregledRezervacijaToolStripMenuItem.Size = new System.Drawing.Size(147, 24);
+            this.pregledRezervacijaToolStripMenuItem.Text = "Pregled rezervacija";
+            this.pregledRezervacijaToolStripMenuItem.Click += new System.EventHandler(this.pregledRezervacijaToolStripMenuItem_Click);
             // 
             // Home
             // 
@@ -397,5 +406,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button reserve;
         private System.Windows.Forms.RichTextBox note;
+        private System.Windows.Forms.ToolStripMenuItem pregledRezervacijaToolStripMenuItem;
     }
 }

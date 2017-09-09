@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="ViewModel\BandListItemViewModel.cs" />
     <Compile Include="ViewModel\RepertoireViewModel.cs" />
+    <Compile Include="ViewModel\ReservationListItemViewModel.cs" />
     <Compile Include="View\BandRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +101,12 @@
     <Compile Include="View\User\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\User\Reservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\User\Reservation.Designer.cs">
+      <DependentUpon>Reservation.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -127,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\User\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\User\Reservation.resx">
+      <DependentUpon>Reservation.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -1,5 +1,6 @@
 ﻿using FOI.PI.MusicBandApp.Contracts;
 using FOI.PI.MusicBandApp.Contracts.Account;
+using System.Collections.Generic;
 
 namespace FOI.PI.MusicBandApp.Business.Account
 {
@@ -7,5 +8,8 @@ namespace FOI.PI.MusicBandApp.Business.Account
     {
         LoginDto Login(string mail, string password);
         ErrorDto Register(AccountDto account);
+        List<ReservationDto> GetAllReservations(int personId);
+        ErrorDto CreateReservation(ReservationDto reservation);
+        ErrorDto CancelReservation(int reservationId);
     }
 }

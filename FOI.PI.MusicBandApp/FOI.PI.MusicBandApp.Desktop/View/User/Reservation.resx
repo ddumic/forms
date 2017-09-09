@@ -117,43 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="DateToGreaterIsThanDateFrom" xml:space="preserve">
-    <value>Datum 'od' je veći od datuma 'do'</value>
-  </data>
-  <data name="Error" xml:space="preserve">
-    <value>Pogreška</value>
-  </data>
-  <data name="ImageNotValid" xml:space="preserve">
-    <value>Pogrešna putanja do slike</value>
-  </data>
-  <data name="IncorrectEmailFormat" xml:space="preserve">
-    <value>Mail nije u pravilnom formatu</value>
-  </data>
-  <data name="IncorrectNumberFormat" xml:space="preserve">
-    <value>Broj nije u ispravnom formazu</value>
-  </data>
-  <data name="InsertAllValues" xml:space="preserve">
-    <value>Popunite sva polja</value>
-  </data>
-  <data name="MailAlreadyTaken" xml:space="preserve">
-    <value>Mail se već koristi</value>
-  </data>
-  <data name="RegisteredSuccessfully" xml:space="preserve">
-    <value>Registracija uspješno provedena!</value>
-  </data>
-  <data name="ReservationCanceledSuccessfully" xml:space="preserve">
-    <value>Rezervacija uspješno odbačena</value>
-  </data>
-  <data name="ReservationSentSuccessfully" xml:space="preserve">
-    <value>Rezervacija je uspješno poslana</value>
-  </data>
-  <data name="ResultSetHasMultipleValues" xml:space="preserve">
-    <value>Rezultat sadrži više od očekivanog broja rezultata!</value>
-  </data>
-  <data name="Success" xml:space="preserve">
-    <value>Potvrda</value>
-  </data>
-  <data name="UnknownUser" xml:space="preserve">
-    <value>Pogrešan mail ili lozinka</value>
-  </data>
 </root>

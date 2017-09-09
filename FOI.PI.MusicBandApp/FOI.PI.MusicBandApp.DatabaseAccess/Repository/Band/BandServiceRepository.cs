@@ -130,24 +130,6 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Band
             }
         }
 
-        public ErrorDto CreateReservation(ReservationDto reservation)
-        {
-            using (var db = new MusicBandAppEntities())
-            {
-                db.Rezervacija.Add(new Rezervacija()
-                {
-                    status_rezervacije = 1,
-                    id_osoba = reservation.UserId,
-                    id_bend = reservation.BandId,
-                    napomena = reservation.Note,
-                    datum_od = reservation.DateFrom,
-                    datum_do = reservation.DateTo
-                });
-                db.SaveChanges();
-                return new ErrorDto();
-            }
-        }
-
         #region Helper
         private BandDto MapBand(Bend foundedBand)
         {

@@ -1,8 +1,12 @@
-﻿using FOI.PI.MusicBandApp.Business.Band;
+﻿using FOI.PI.MusicBandApp.Business.Account;
+using FOI.PI.MusicBandApp.Business.Band;
 using FOI.PI.MusicBandApp.Common.Extensions;
 using FOI.PI.MusicBandApp.Common.Resources;
 using FOI.PI.MusicBandApp.Contracts;
+using FOI.PI.MusicBandApp.Contracts.Account;
 using FOI.PI.MusicBandApp.Contracts.Band;
+using FOI.PI.MusicBandApp.DatabaseAccess.Repository.Account;
+using FOI.PI.MusicBandApp.DatabaseAccess.Repository.Band;
 using FOI.PI.MusicBandApp.Desktop.Helper;
 using FOI.PI.MusicBandApp.Desktop.ViewModel;
 using System;
@@ -16,12 +20,14 @@ namespace FOI.PI.MusicBandApp.Desktop.View.User
 {
     public partial class Home : FormHelper
     {
+        private readonly IAccountManagementService _accountManagementService;
         private readonly IBandManagementService _bandManagementService;
         private int _bandId;
 
-        public Home(IBandManagementService bandManagementService)
+        public Home(IAccountManagementService accountManagementService, IBandManagementService bandManagementService)
         {
             InitializeComponent();
+            _accountManagementService = accountManagementService;
             _bandManagementService = bandManagementService;
             GetAllBands();
         }
@@ -57,7 +63,7 @@ namespace FOI.PI.MusicBandApp.Desktop.View.User
             }
             else
             {
-                var response = _bandManagementService.CreateReservation(reservation);
+                var response = _accountManagementService.CreateReservation(reservation);
                 if (!string.IsNullOrEmpty(response.ErrorMesssage))
                 {
                     MessageBoxHelper.ShowMessageBox(response.ErrorMesssage);
@@ -153,5 +159,9 @@ namespace FOI.PI.MusicBandApp.Desktop.View.User
         }
         #endregion
 
+        private void pregledRezervacijaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Reservation(new AccountManagementService(new AccountServiceRepository(), new BandServiceRepository()), new BandManagementService(new BandServiceRepository())).Show();
+        }
     }
 }

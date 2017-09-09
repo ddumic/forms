@@ -16,6 +16,7 @@
             public static readonly string ImageNotValid = "ImageNotValid";
             public static readonly string DateToGreaterIsThanDateFrom = "DateToGreaterIsThanDateFrom";
             public static readonly string ReservationSentSuccessfully = "ReservationSentSuccessfully";
+            public static readonly string ReservationCanceledSuccessfully = "ReservationCanceledSuccessfully";
         }
     }
 }

@@ -77,7 +77,7 @@ namespace FOI.PI.MusicBandApp.Desktop
                             accountInstance.Mail = loginDto.User.Mail;
                             accountInstance.AccountType = loginDto.User.AccountType;
 
-                            var accountForm = new Home(new BandManagementService(new BandServiceRepository()));
+                            var accountForm = new Home(new AccountManagementService(new AccountServiceRepository(), new BandServiceRepository()), new BandManagementService(new BandServiceRepository()));
                             accountForm.FormClosed += ((o, s) =>
                             {
                                 this.Show();

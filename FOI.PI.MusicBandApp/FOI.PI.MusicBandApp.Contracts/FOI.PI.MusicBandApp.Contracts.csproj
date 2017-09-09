@@ -45,7 +45,7 @@
     <Compile Include="Band\BandDto.cs" />
     <Compile Include="Band\IBandServiceRepository.cs" />
     <Compile Include="Band\RepertoireDto.cs" />
-    <Compile Include="Band\ReservationDto.cs" />
+    <Compile Include="Account\ReservationDto.cs" />
     <Compile Include="ErrorDto.cs" />
     <Compile Include="LoginDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

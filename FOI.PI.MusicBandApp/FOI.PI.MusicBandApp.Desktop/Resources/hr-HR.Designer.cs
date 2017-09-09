@@ -133,6 +133,15 @@ namespace FOI.PI.MusicBandApp.Desktop.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rezervacija uspješno odbačena.
+        /// </summary>
+        internal static string ReservationCanceledSuccessfully {
+            get {
+                return ResourceManager.GetString("ReservationCanceledSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rezervacija je uspješno poslana.
         /// </summary>
         internal static string ReservationSentSuccessfully {

@@ -72,5 +72,43 @@ namespace FOI.PI.MusicBandApp.Business.Account
                 };
             }
         }
+
+        public ErrorDto CreateReservation(ReservationDto reservation)
+        {
+            try
+            {
+                var response = _accountServiceRepository.CreateReservation(reservation);
+                if (response.ErrorCode.HasValue)
+                    return Validation.TranslateValidationStatusCode(response.ErrorCode.Value);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return new ErrorDto()
+                {
+                    ErrorMesssage = ex.Message
+                };
+            }
+        }
+
+        public List<ReservationDto> GetAllReservations(int personId)
+        {
+            return _accountServiceRepository.GetAllReservations(personId);
+        }
+
+        public ErrorDto CancelReservation(int reservationId)
+        {
+            try
+            {
+                return _accountServiceRepository.CancelReservation(reservationId);
+            }
+            catch (Exception ex)
+            {
+                return new ErrorDto()
+                {
+                    ErrorMesssage = ex.Message
+                };
+            }
+        }
     }
 }

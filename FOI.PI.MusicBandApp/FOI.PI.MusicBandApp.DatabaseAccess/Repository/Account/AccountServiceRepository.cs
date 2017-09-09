@@ -2,11 +2,57 @@
 using FOI.PI.MusicBandApp.Contracts.Account;
 using FOI.PI.MusicBandApp.Contracts.Validation;
 using System.Linq;
+using System;
+using System.Collections.Generic;
 
 namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Account
 {
     public class AccountServiceRepository : IAccountServiceRepository
     {
+        public ErrorDto CreateReservation(ReservationDto reservation)
+        {
+            using (var db = new MusicBandAppEntities())
+            {
+                db.Rezervacija.Add(new Rezervacija()
+                {
+                    status_rezervacije = 1,
+                    id_osoba = reservation.UserId,
+                    id_bend = reservation.BandId,
+                    napomena = reservation.Note,
+                    datum_od = reservation.DateFrom,
+                    datum_do = reservation.DateTo
+                });
+                db.SaveChanges();
+                return new ErrorDto();
+            }
+        }
+
+        public List<ReservationDto> GetAllReservations(int personId)
+        {
+            using (var db = new MusicBandAppEntities())
+            {
+                var response = new List<ReservationDto>();
+                var reservations = db.Rezervacija.Where(x => x.id_osoba == personId);
+
+                foreach (var reservation in reservations)
+                {
+                    response.Add(new ReservationDto()
+                    {
+                        Id = reservation.id_rezervacija,
+                        BandId = reservation.id_bend,
+                        BandName = reservation.Bend.naziv,
+                        DateFrom = reservation.datum_od,
+                        DateTo = reservation.datum_do,
+                        Note = reservation.napomena,
+                        Status = reservation.StatusRezervacije.opis,
+                        Charge = reservation.cijena
+                    });
+                }
+
+                return response;
+            }
+        }
+
         public AccountDto Login(string mail, string password)
         {
             using (var db = new MusicBandAppEntities())
@@ -66,6 +112,16 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Account
                     prezime = account.Surname,
                     spol = account.Gender
                 });
+                db.SaveChanges();
+                return new ErrorDto();
+            }
+        }
+
+        public ErrorDto CancelReservation(int reservationId)
+        {
+            using (var db = new MusicBandAppEntities())
+            {
+                db.Rezervacija.Where(x => x.id_rezervacija == reservationId).FirstOrDefault().status_rezervacije = 4;
                 db.SaveChanges();
                 return new ErrorDto();
             }

@@ -53,7 +53,7 @@ namespace FOI.PI.MusicBandApp.Desktop
                             accountInstance.Mail = loginDto.Band.Mail;
                             accountInstance.AccountType = loginDto.Band.AccountType;
 
-                            var bandForm = new FrmGlavna();
+                            var bandForm = new FrmGlavna(new BandManagementService(new BandServiceRepository()));
                             bandForm.FormClosed += ((o, s) =>
                             {
                                 this.Show();

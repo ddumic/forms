@@ -61,6 +61,15 @@ namespace FOI.PI.MusicBandApp.Desktop.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bend je uspješno izbrisan.
+        /// </summary>
+        internal static string BandDeletedSucessfully {
+            get {
+                return ResourceManager.GetString("BandDeletedSucessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rezervaciju nije moguće potvrditi! Provjerite da li postoji iznos te da li je status &apos;Zatrazena&apos;.
         /// </summary>
         internal static string CannotSubmitReservation {

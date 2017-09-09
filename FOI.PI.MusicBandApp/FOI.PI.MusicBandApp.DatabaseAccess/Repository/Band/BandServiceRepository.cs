@@ -130,6 +130,26 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Band
             }
         }
 
+        public ErrorDto DeleteBand(int bandId)
+        {
+            using (var db = new MusicBandAppEntities())
+            {
+                var responseDto = new ErrorDto();
+                var band = db.Bend.Where(x => x.id_bend == bandId);
+
+                if (band.Count() > 1)
+                {
+                    responseDto.ErrorCode = (int)ValidationStatusCode.ResultsetHasMoreItems;
+                }
+                else
+                {
+                    band.FirstOrDefault().tip_korisnika = 3;
+                    db.SaveChanges();
+                }
+                return responseDto;
+            }
+        }
+
         #region Helper
         private BandDto MapBand(Bend foundedBand)
         {

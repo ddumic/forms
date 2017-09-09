@@ -70,5 +70,23 @@ namespace FOI.PI.MusicBandApp.Business.Band
             return _bandServiceRepository.GetBandRepertoire(bandId);
         }
 
+        public ErrorDto DeleteBand(int bandId)
+        {
+            try
+            {
+                var response = _bandServiceRepository.DeleteBand(bandId);
+                if (response.ErrorCode.HasValue)
+                    return Validation.TranslateValidationStatusCode(response.ErrorCode.Value);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return new ErrorDto()
+                {
+                    ErrorMesssage = ex.Message
+                };
+            }
+        }
+
     }
 }

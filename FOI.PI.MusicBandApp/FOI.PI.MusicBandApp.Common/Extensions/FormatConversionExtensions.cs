@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
-using System.Windows.Forms;
 
 namespace FOI.PI.MusicBandApp.Common.Extensions
 {
@@ -37,6 +36,17 @@ namespace FOI.PI.MusicBandApp.Common.Extensions
             catch (Exception)
             {
                 return 0;
+            }
+        }
+
+        public static Bitmap ToImage(this byte[] blob)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                byte[] pData = blob;
+                memoryStream.Write(pData, 0, Convert.ToInt32(pData.Length));
+                Bitmap bitMap = new Bitmap(memoryStream, false);
+                return bitMap;
             }
         }
     }

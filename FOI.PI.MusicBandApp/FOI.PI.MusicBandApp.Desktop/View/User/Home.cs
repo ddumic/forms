@@ -101,18 +101,7 @@ namespace FOI.PI.MusicBandApp.Desktop.View.User
             instagram.Text = band.InstagramPage;
             contact.Text = band.Contact;
             mail.Text = band.Mail;
-            image.Image = ByteToImage(band.Image);
-        }
-
-        private Bitmap ByteToImage(byte[] blob)
-        {
-            using (var memoryStream = new MemoryStream())
-            {
-                byte[] pData = blob;
-                memoryStream.Write(pData, 0, Convert.ToInt32(pData.Length));
-                Bitmap bitMap = new Bitmap(memoryStream, false);
-                return bitMap;
-            }
+            image.Image = band.Image.ToImage();
         }
 
         private void UpdateFromRepertoireDto(List<RepertoireDto> songs)

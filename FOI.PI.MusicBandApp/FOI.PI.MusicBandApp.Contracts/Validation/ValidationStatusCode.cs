@@ -4,6 +4,7 @@
     {
         UserDoesNotExists = 1,
         ResultsetHasMoreItems = 2,
-        MailAlreadyTaken = 3
+        MailAlreadyTaken = 3,
+        InvalidReservationStatus = 4
     }
 }

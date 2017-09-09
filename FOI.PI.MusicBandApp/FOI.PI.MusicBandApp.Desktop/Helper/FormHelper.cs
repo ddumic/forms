@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace FOI.PI.MusicBandApp.Desktop.Helper
 {
@@ -6,7 +7,7 @@ namespace FOI.PI.MusicBandApp.Desktop.Helper
     {
         public FormHelper()
         {
-            this.BackColor = System.Drawing.Color.PapayaWhip;
+            this.BackColor = Color.PapayaWhip;
             this.StartPosition = FormStartPosition.CenterScreen;
         }
     }

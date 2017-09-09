@@ -4,6 +4,7 @@ using FOI.PI.MusicBandApp.Contracts.Band;
 using System.Linq;
 using System.Collections.Generic;
 using FOI.PI.MusicBandApp.Contracts.Validation;
+using FOI.PI.MusicBandApp.Contracts.Account;
 
 namespace FOI.PI.MusicBandApp.Business.Band
 {
@@ -93,6 +94,52 @@ namespace FOI.PI.MusicBandApp.Business.Band
             try
             {
                 var response = _bandServiceRepository.UpdateBand(band);
+                if (response.ErrorCode.HasValue)
+                    return Validation.TranslateValidationStatusCode(response.ErrorCode.Value);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return new ErrorDto()
+                {
+                    ErrorMesssage = ex.Message
+                };
+            }
+        }
+
+        public List<ReservationDto> GetReservations(int bandId)
+        {
+            return _bandServiceRepository.GetReservations(bandId);
+        }
+
+        public List<ReservationDto> GetReservatedDates(int bandId)
+        {
+            return _bandServiceRepository.GetReservatedDates(bandId);
+        }
+
+        public ErrorDto CancelReservation(int reservationId)
+        {
+            try
+            {
+                var response = _bandServiceRepository.CancelReservation(reservationId);
+                if (response.ErrorCode.HasValue)
+                    return Validation.TranslateValidationStatusCode(response.ErrorCode.Value);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return new ErrorDto()
+                {
+                    ErrorMesssage = ex.Message
+                };
+            }
+        }
+
+        public ErrorDto SetReservationPrice(int reservationId, double price)
+        {
+            try
+            {
+                var response = _bandServiceRepository.SetReservationPrice(reservationId, price);
                 if (response.ErrorCode.HasValue)
                     return Validation.TranslateValidationStatusCode(response.ErrorCode.Value);
                 return response;

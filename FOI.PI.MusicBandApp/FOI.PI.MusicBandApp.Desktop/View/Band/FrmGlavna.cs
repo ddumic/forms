@@ -3,6 +3,7 @@ using FOI.PI.MusicBandApp.Common.Extensions;
 using FOI.PI.MusicBandApp.Common.Resources;
 using FOI.PI.MusicBandApp.Contracts;
 using FOI.PI.MusicBandApp.Contracts.Band;
+using FOI.PI.MusicBandApp.DatabaseAccess.Repository.Band;
 using FOI.PI.MusicBandApp.Desktop.Helper;
 using System;
 using System.Collections.Generic;
@@ -130,5 +131,10 @@ namespace FOI.PI.MusicBandApp.Desktop.View.Band
             return errorList;
         }
         #endregion
+
+        private void pregledRezervacijaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmRezervacija(new BandManagementService(new BandServiceRepository())).Show();
+        }
     }
 }

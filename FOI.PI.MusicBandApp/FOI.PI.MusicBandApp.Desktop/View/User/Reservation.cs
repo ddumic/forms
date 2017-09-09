@@ -85,7 +85,16 @@ namespace FOI.PI.MusicBandApp.Desktop.View.User
         {
             if (ValidateSubmitRequest())
             {
-
+                var response = _accountManagementService.SubmitReservaton(_reservationId);
+                if (!string.IsNullOrEmpty(response.ErrorMesssage))
+                {
+                    MessageBoxHelper.ShowMessageBox(response.ErrorMesssage);
+                }
+                else
+                {
+                    MessageBoxHelper.ShowMessageBox(ResourceHelper.ResourceKey.ReservationSubmittedSuccessfully, true);
+                    this.Close();
+                }
             }
             else
             {

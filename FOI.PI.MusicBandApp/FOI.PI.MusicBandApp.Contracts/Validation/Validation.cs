@@ -26,6 +26,12 @@ namespace FOI.PI.MusicBandApp.Contracts.Validation
                         ErrorCode = 3,
                         ErrorMesssage = ResourceHelper.ResourceKey.MailAlreadyTaken
                     };
+                case 4:
+                    return new ErrorDto()
+                    {
+                        ErrorCode = 4,
+                        ErrorMesssage = ResourceHelper.ResourceKey.InvalidReservationStatus
+                    };
                 default:
                     throw new System.NotSupportedException();
             }

@@ -3,6 +3,7 @@ using FOI.PI.MusicBandApp.Contracts.Band;
 using FOI.PI.MusicBandApp.Contracts.Validation;
 using System.Linq;
 using System.Collections.Generic;
+using FOI.PI.MusicBandApp.Contracts.Account;
 
 namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Band
 {
@@ -175,6 +176,110 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Band
                     foundedBand.naziv = band.Name;
                     foundedBand.slika = band.Image;
                     db.SaveChanges();
+                }
+                else
+                {
+                    responseDto.ErrorCode = (int)ValidationStatusCode.UserDoesNotExists;
+                }
+
+                return responseDto;
+            }
+        }
+
+        public List<ReservationDto> GetReservations(int bandId)
+        {
+            using (var db = new MusicBandAppEntities())
+            {
+                var responseDto = new List<ReservationDto>();
+
+                var reservations = db.Rezervacija.Where(x => x.id_bend == bandId && x.status_rezervacije == 1);
+                foreach (var reservation in reservations)
+                {
+                    responseDto.Add(new ReservationDto()
+                    {
+                        BandName = reservation.Bend.naziv,
+                        Charge = reservation.cijena,
+                        DateFrom = reservation.datum_od,
+                        DateTo = reservation.datum_do,
+                        Id = reservation.id_rezervacija,
+                        Note = reservation.napomena,
+                        Status = reservation.StatusRezervacije.opis
+                    });
+                }
+
+                return responseDto;
+            }
+        }
+
+        public List<ReservationDto> GetReservatedDates(int bandId)
+        {
+            using (var db = new MusicBandAppEntities())
+            {
+                var responseDto = new List<ReservationDto>();
+
+                var reservations = db.Rezervacija.Where(x => x.id_bend == bandId && x.status_rezervacije == 2);
+                foreach (var reservation in reservations)
+                {
+                    responseDto.Add(new ReservationDto()
+                    {
+                        DateFrom = reservation.datum_od,
+                        DateTo = reservation.datum_do,
+                        Status = reservation.StatusRezervacije.opis,
+                        Charge = reservation.cijena
+                    });
+                }
+
+                return responseDto;
+            }
+        }
+
+        public ErrorDto CancelReservation(int reservationId)
+        {
+            using (var db = new MusicBandAppEntities())
+            {
+                var responseDto = new ErrorDto();
+                var resultSet = db.Rezervacija.Where(x => x.id_rezervacija == reservationId);
+
+                if (resultSet.Count() > 1)
+                {
+                    responseDto.ErrorCode = (int)ValidationStatusCode.ResultsetHasMoreItems;
+                }
+                else if (resultSet.Any())
+                {
+                    resultSet.FirstOrDefault().status_rezervacije = 4;
+                    db.SaveChanges();
+                }
+                else
+                {
+                    responseDto.ErrorCode = (int)ValidationStatusCode.UserDoesNotExists;
+                }
+
+                return responseDto;
+            }
+        }
+
+        public ErrorDto SetReservationPrice(int reservationId, double price)
+        {
+            using (var db = new MusicBandAppEntities())
+            {
+                var responseDto = new ErrorDto();
+                var resultSet = db.Rezervacija.Where(x => x.id_rezervacija == reservationId);
+
+                if (resultSet.Count() > 1)
+                {
+                    responseDto.ErrorCode = (int)ValidationStatusCode.ResultsetHasMoreItems;
+                }
+                else if (resultSet.Any())
+                {
+                    if (resultSet.FirstOrDefault().status_rezervacije == 1)
+                    {
+                        resultSet.FirstOrDefault().cijena = price;
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        responseDto.ErrorCode = (int)ValidationStatusCode.InvalidReservationStatus;
+                    }
                 }
                 else
                 {

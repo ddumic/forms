@@ -54,5 +54,11 @@ namespace FOI.PI.MusicBandApp.Common.Extensions
                 return false;
             }
         }
+
+        public static bool IsInputDouble(this string value)
+        {
+            double result;
+            return double.TryParse(value, out result);
+        }
     }
 }

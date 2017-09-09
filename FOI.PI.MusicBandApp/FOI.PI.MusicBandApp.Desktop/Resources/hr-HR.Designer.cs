@@ -142,11 +142,29 @@ namespace FOI.PI.MusicBandApp.Desktop.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rezervacija mora biti u statusu &apos;Zatrazena&apos;.
+        /// </summary>
+        internal static string InvalidReservationStatus {
+            get {
+                return ResourceManager.GetString("InvalidReservationStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mail se već koristi.
         /// </summary>
         internal static string MailAlreadyTaken {
             get {
                 return ResourceManager.GetString("MailAlreadyTaken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unesite iznos.
+        /// </summary>
+        internal static string PriceMissing {
+            get {
+                return ResourceManager.GetString("PriceMissing", resourceCulture);
             }
         }
         
@@ -169,11 +187,38 @@ namespace FOI.PI.MusicBandApp.Desktop.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rezervacija uspješno odbačena.
+        /// </summary>
+        internal static string ReservationDismissed {
+            get {
+                return ResourceManager.GetString("ReservationDismissed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cijena rezervacije postavljena uspješno.
+        /// </summary>
+        internal static string ReservationSaved {
+            get {
+                return ResourceManager.GetString("ReservationSaved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rezervacija je uspješno poslana.
         /// </summary>
         internal static string ReservationSentSuccessfully {
             get {
                 return ResourceManager.GetString("ReservationSentSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rezervacija uspješno dogovorena.
+        /// </summary>
+        internal static string ReservationSubmittedSuccessfully {
+            get {
+                return ResourceManager.GetString("ReservationSubmittedSuccessfully", resourceCulture);
             }
         }
         

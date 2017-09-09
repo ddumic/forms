@@ -138,6 +138,7 @@
             this.pregledRezervacijaToolStripMenuItem.Name = "pregledRezervacijaToolStripMenuItem";
             this.pregledRezervacijaToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.pregledRezervacijaToolStripMenuItem.Text = "Pregled rezervacija";
+            this.pregledRezervacijaToolStripMenuItem.Click += new System.EventHandler(this.pregledRezervacijaToolStripMenuItem_Click);
             // 
             // članoviToolStripMenuItem
             // 
@@ -416,7 +417,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1045, 441);
+            this.ClientSize = new System.Drawing.Size(1045, 246);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "FrmGlavna";

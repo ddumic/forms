@@ -59,5 +59,12 @@ namespace FOI.PI.MusicBandApp.Common.Extensions
                 return ms.ToArray();
             }
         }
+
+        public static double ToDouble(this string value)
+        {
+            double result;
+            double.TryParse(value, out result);
+            return result;
+        }
     }
 }

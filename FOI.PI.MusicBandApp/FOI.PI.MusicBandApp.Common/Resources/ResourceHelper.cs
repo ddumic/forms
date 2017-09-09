@@ -20,6 +20,11 @@
             public static readonly string CannotSubmitReservation = "CannotSubmitReservation";
             public static readonly string BandDeletedSuccessfully = "BandDeletedSucessfully";
             public static readonly string BandUpdatedSuccessfully = "BandUpdatedSuccessfully";
+            public static readonly string PriceMissing = "PriceMissing";
+            public static readonly string InvalidReservationStatus = "InvalidReservationStatus";
+            public static readonly string ReservationDismissed = "ReservationDismissed";
+            public static readonly string ReservationSaved = "ReservationSaved";
+            public static readonly string ReservationSubmittedSuccessfully = "ReservationSubmittedSuccessfully";
         }
     }
 }

@@ -145,6 +145,7 @@
             this.članoviToolStripMenuItem.Name = "članoviToolStripMenuItem";
             this.članoviToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.članoviToolStripMenuItem.Text = "Članovi";
+            this.članoviToolStripMenuItem.Click += new System.EventHandler(this.članoviToolStripMenuItem_Click);
             // 
             // pomoćToolStripMenuItem
             // 

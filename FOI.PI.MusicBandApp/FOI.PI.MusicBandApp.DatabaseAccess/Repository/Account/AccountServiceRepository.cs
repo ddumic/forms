@@ -137,5 +137,45 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Account
                 return new ErrorDto();
             }
         }
+
+        public List<AccountDto> GetAccountsWithoutBand()
+        {
+            using (var db = new MusicBandAppEntities())
+            {
+                var responseDto = new List<AccountDto>();
+                foreach (var account in db.Osoba.Where(x => x.id_bend == null))
+                {
+                    responseDto.Add(new AccountDto()
+                    {
+                        Id = account.id_osoba,
+                        Name = account.ime,
+                        Surname = account.prezime,
+                        Gender = account.spol,
+                        Mail = account.mail
+                    });
+                }
+                return responseDto;
+            }
+        }
+
+        public List<AccountDto> GetBandMembers(int bandId)
+        {
+            using (var db = new MusicBandAppEntities())
+            {
+                var responseDto = new List<AccountDto>();
+                foreach (var account in db.Osoba.Where(x => x.id_bend == bandId))
+                {
+                    responseDto.Add(new AccountDto()
+                    {
+                        Id = account.id_osoba,
+                        Name = account.ime,
+                        Surname = account.prezime,
+                        Gender = account.spol,
+                        Mail = account.mail
+                    });
+                }
+                return responseDto;
+            }
+        }
     }
 }

@@ -65,6 +65,7 @@
     <Compile Include="EFModels\sysdiagrams.cs" />
     <Compile Include="EFModels\TipKorisnika.cs" />
     <Compile Include="EFModels\Zanr.cs" />
+    <Compile Include="Repository\Band\Member\BandMemberServiceRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

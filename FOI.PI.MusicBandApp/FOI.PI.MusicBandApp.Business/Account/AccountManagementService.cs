@@ -125,5 +125,15 @@ namespace FOI.PI.MusicBandApp.Business.Account
                 };
             }
         }
+
+        public List<AccountDto> GetAccountsWithoutBand()
+        {
+            return _accountServiceRepository.GetAccountsWithoutBand();
+        }
+
+        public List<AccountDto> GetBandMembers(int bandId)
+        {
+            return _accountServiceRepository.GetBandMembers(bandId);
+        }
     }
 }

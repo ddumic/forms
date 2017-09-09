@@ -10,5 +10,7 @@ namespace FOI.PI.MusicBandApp.Contracts.Account
         ErrorDto CreateReservation(ReservationDto reservation);
         ErrorDto CancelReservation(int reservationId);
         ErrorDto SubmitReservaton(int reservationId);
+        List<AccountDto> GetAccountsWithoutBand();
+        List<AccountDto> GetBandMembers(int bandId);
     }
 }

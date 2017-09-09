@@ -1,9 +1,13 @@
-﻿using FOI.PI.MusicBandApp.Business.Band;
+﻿using FOI.PI.MusicBandApp.Business.Account;
+using FOI.PI.MusicBandApp.Business.Band;
+using FOI.PI.MusicBandApp.Business.Band.Member;
 using FOI.PI.MusicBandApp.Common.Extensions;
 using FOI.PI.MusicBandApp.Common.Resources;
 using FOI.PI.MusicBandApp.Contracts;
 using FOI.PI.MusicBandApp.Contracts.Band;
+using FOI.PI.MusicBandApp.DatabaseAccess.Repository.Account;
 using FOI.PI.MusicBandApp.DatabaseAccess.Repository.Band;
+using FOI.PI.MusicBandApp.DatabaseAccess.Repository.Band.Member;
 using FOI.PI.MusicBandApp.Desktop.Helper;
 using System;
 using System.Collections.Generic;
@@ -135,6 +139,11 @@ namespace FOI.PI.MusicBandApp.Desktop.View.Band
         private void pregledRezervacijaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FrmRezervacija(new BandManagementService(new BandServiceRepository())).Show();
+        }
+
+        private void članoviToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmClan(new AccountManagementService(new AccountServiceRepository(), new BandServiceRepository()), new BandMemberManagementService(new BandMemberServiceRepository())).Show();
         }
     }
 }

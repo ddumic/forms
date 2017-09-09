@@ -25,6 +25,8 @@
             public static readonly string ReservationDismissed = "ReservationDismissed";
             public static readonly string ReservationSaved = "ReservationSaved";
             public static readonly string ReservationSubmittedSuccessfully = "ReservationSubmittedSuccessfully";
+            public static readonly string MemberDeletedSuccessfully = "MemberDeletedSuccessfully";
+            public static readonly string MemberAddedSuccessfully = "MemberAddedSuccessfully";
         }
     }
 }

@@ -43,7 +43,9 @@
     <Compile Include="Account\AccountManagementService.cs" />
     <Compile Include="Account\IAccountManagementService.cs" />
     <Compile Include="Band\BandManagementService.cs" />
+    <Compile Include="Band\Member\BandMemberManagementService.cs" />
     <Compile Include="Band\IBandManagementService.cs" />
+    <Compile Include="Band\Member\IBandMemberManagementService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

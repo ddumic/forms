@@ -160,6 +160,24 @@ namespace FOI.PI.MusicBandApp.Desktop.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Član je uspješno dodan.
+        /// </summary>
+        internal static string MemberAddedSuccessfully {
+            get {
+                return ResourceManager.GetString("MemberAddedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Član je uspješno izbrisan.
+        /// </summary>
+        internal static string MemberDeletedSuccessfully {
+            get {
+                return ResourceManager.GetString("MemberDeletedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unesite iznos.
         /// </summary>
         internal static string PriceMissing {

@@ -17,6 +17,7 @@
             public static readonly string DateToGreaterIsThanDateFrom = "DateToGreaterIsThanDateFrom";
             public static readonly string ReservationSentSuccessfully = "ReservationSentSuccessfully";
             public static readonly string ReservationCanceledSuccessfully = "ReservationCanceledSuccessfully";
+            public static readonly string CannotSubmitReservation = "CannotSubmitReservation";
         }
     }
 }

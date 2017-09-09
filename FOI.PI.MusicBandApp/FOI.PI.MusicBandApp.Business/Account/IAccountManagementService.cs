@@ -11,5 +11,6 @@ namespace FOI.PI.MusicBandApp.Business.Account
         List<ReservationDto> GetAllReservations(int personId);
         ErrorDto CreateReservation(ReservationDto reservation);
         ErrorDto CancelReservation(int reservationId);
+        ErrorDto SubmitReservaton(int reservationId);
     }
 }

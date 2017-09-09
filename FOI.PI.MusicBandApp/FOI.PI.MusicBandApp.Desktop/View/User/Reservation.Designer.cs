@@ -58,6 +58,7 @@
             this.submit.TabIndex = 1;
             this.submit.Text = "POTVRDI ZAHTJEV";
             this.submit.UseVisualStyleBackColor = true;
+            this.submit.Click += new System.EventHandler(this.submit_Click);
             // 
             // dismiss
             // 

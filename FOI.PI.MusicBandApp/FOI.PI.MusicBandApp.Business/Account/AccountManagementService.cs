@@ -110,5 +110,20 @@ namespace FOI.PI.MusicBandApp.Business.Account
                 };
             }
         }
+
+        public ErrorDto SubmitReservaton(int reservationId)
+        {
+            try
+            {
+                return _accountServiceRepository.SubmitReservaton(reservationId);
+            }
+            catch (Exception ex)
+            {
+                return new ErrorDto()
+                {
+                    ErrorMesssage = ex.Message
+                };
+            }
+        }
     }
 }

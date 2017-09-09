@@ -126,5 +126,15 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Account
                 return new ErrorDto();
             }
         }
+
+        public ErrorDto SubmitReservaton(int reservationId)
+        {
+            using (var db = new MusicBandAppEntities())
+            {
+                db.Rezervacija.Where(x => x.id_rezervacija == reservationId).FirstOrDefault().status_rezervacije = 2;
+                db.SaveChanges();
+                return new ErrorDto();
+            }
+        }
     }
 }

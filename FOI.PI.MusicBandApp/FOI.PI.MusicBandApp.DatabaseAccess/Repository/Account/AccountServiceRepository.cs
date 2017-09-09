@@ -31,6 +31,7 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Account
                     responseDto.Name = loggedUser.ime;
                     responseDto.Surname = loggedUser.prezime;
                     responseDto.AccountFounded = true;
+                    responseDto.Id = loggedUser.id_osoba;
                 }
                 else
                 {

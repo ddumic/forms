@@ -14,6 +14,8 @@
             public static readonly string IncorrectNumberFormat = "IncorrectNumberFormat";
             public static readonly string MailAlreadyTaken = "MailAlreadyTaken";
             public static readonly string ImageNotValid = "ImageNotValid";
+            public static readonly string DateToGreaterIsThanDateFrom = "DateToGreaterIsThanDateFrom";
+            public static readonly string ReservationSentSuccessfully = "ReservationSentSuccessfully";
         }
     }
 }

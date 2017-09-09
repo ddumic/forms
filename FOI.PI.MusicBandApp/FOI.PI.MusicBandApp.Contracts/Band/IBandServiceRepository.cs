@@ -9,5 +9,6 @@ namespace FOI.PI.MusicBandApp.Contracts.Band
         BandDto GetBand(string mail, string password);
         List<BandDto> GetAllBands();
         List<RepertoireDto> GetBandRepertoire(int bandId);
+        ErrorDto CreateReservation(ReservationDto reservation);
     }
 }

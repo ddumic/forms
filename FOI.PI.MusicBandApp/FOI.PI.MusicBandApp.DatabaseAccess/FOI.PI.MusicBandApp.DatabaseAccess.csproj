@@ -61,6 +61,7 @@
     <Compile Include="Repository\Account\AccountServiceRepository.cs" />
     <Compile Include="Repository\Band\BandServiceRepository.cs" />
     <Compile Include="EFModels\Rezervacija.cs" />
+    <Compile Include="EFModels\StatusRezervacije.cs" />
     <Compile Include="EFModels\sysdiagrams.cs" />
     <Compile Include="EFModels\TipKorisnika.cs" />
     <Compile Include="EFModels\Zanr.cs" />

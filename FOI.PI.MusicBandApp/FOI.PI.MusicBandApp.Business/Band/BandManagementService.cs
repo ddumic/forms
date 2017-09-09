@@ -69,5 +69,23 @@ namespace FOI.PI.MusicBandApp.Business.Band
         {
             return _bandServiceRepository.GetBandRepertoire(bandId);
         }
+
+        public ErrorDto CreateReservation(ReservationDto reservation)
+        {
+            try
+            {
+                var response = _bandServiceRepository.CreateReservation(reservation);
+                if (response.ErrorCode.HasValue)
+                    return Validation.TranslateValidationStatusCode(response.ErrorCode.Value);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return new ErrorDto()
+                {
+                    ErrorMesssage = ex.Message
+                };
+            }
+        }
     }
 }

@@ -18,6 +18,7 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess
         public virtual DbSet<Pjesma> Pjesma { get; set; }
         public virtual DbSet<PopisOpreme> PopisOpreme { get; set; }
         public virtual DbSet<Rezervacija> Rezervacija { get; set; }
+        public virtual DbSet<StatusRezervacije> StatusRezervacije { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TipKorisnika> TipKorisnika { get; set; }
         public virtual DbSet<Zanr> Zanr { get; set; }
@@ -144,6 +145,15 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess
             modelBuilder.Entity<Rezervacija>()
                 .Property(e => e.napomena)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<StatusRezervacije>()
+                .Property(e => e.opis)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<StatusRezervacije>()
+                .HasMany(e => e.Rezervacija)
+                .WithOptional(e => e.StatusRezervacije)
+                .HasForeignKey(e => e.status_rezervacije);
 
             modelBuilder.Entity<TipKorisnika>()
                 .Property(e => e.naziv)

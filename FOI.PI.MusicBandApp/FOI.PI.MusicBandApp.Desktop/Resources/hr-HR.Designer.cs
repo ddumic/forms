@@ -61,6 +61,15 @@ namespace FOI.PI.MusicBandApp.Desktop.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Datum &apos;od&apos; je veći od datuma &apos;do&apos;.
+        /// </summary>
+        internal static string DateToGreaterIsThanDateFrom {
+            get {
+                return ResourceManager.GetString("DateToGreaterIsThanDateFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pogreška.
         /// </summary>
         internal static string Error {
@@ -120,6 +129,15 @@ namespace FOI.PI.MusicBandApp.Desktop.Resources {
         internal static string RegisteredSuccessfully {
             get {
                 return ResourceManager.GetString("RegisteredSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rezervacija je uspješno poslana.
+        /// </summary>
+        internal static string ReservationSentSuccessfully {
+            get {
+                return ResourceManager.GetString("ReservationSentSuccessfully", resourceCulture);
             }
         }
         

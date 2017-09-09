@@ -35,6 +35,12 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.bandList = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.reserve = new System.Windows.Forms.Button();
+            this.dateTo = new System.Windows.Forms.DateTimePicker();
+            this.dateFrom = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.repertoireList = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,9 +57,11 @@
             this.webpage = new System.Windows.Forms.TextBox();
             this.city = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.TextBox();
+            this.note = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bandList)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.repertoireList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.image)).BeginInit();
             this.SuspendLayout();
@@ -108,6 +116,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.repertoireList);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -130,6 +139,63 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Podaci";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.note);
+            this.groupBox2.Controls.Add(this.reserve);
+            this.groupBox2.Controls.Add(this.dateTo);
+            this.groupBox2.Controls.Add(this.dateFrom);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Location = new System.Drawing.Point(6, 217);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(915, 87);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Rezerviraj bend";
+            // 
+            // reserve
+            // 
+            this.reserve.Location = new System.Drawing.Point(616, 24);
+            this.reserve.Name = "reserve";
+            this.reserve.Size = new System.Drawing.Size(293, 45);
+            this.reserve.TabIndex = 18;
+            this.reserve.Text = "POŠALJI UPIT";
+            this.reserve.UseVisualStyleBackColor = true;
+            this.reserve.Click += new System.EventHandler(this.reserve_Click);
+            // 
+            // dateTo
+            // 
+            this.dateTo.Location = new System.Drawing.Point(83, 52);
+            this.dateTo.Name = "dateTo";
+            this.dateTo.Size = new System.Drawing.Size(243, 22);
+            this.dateTo.TabIndex = 17;
+            // 
+            // dateFrom
+            // 
+            this.dateFrom.Location = new System.Drawing.Point(83, 24);
+            this.dateFrom.Name = "dateFrom";
+            this.dateFrom.Size = new System.Drawing.Size(243, 22);
+            this.dateFrom.TabIndex = 16;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(4, 29);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(73, 17);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Datum od:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(4, 52);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(73, 17);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Datum do:";
             // 
             // repertoireList
             // 
@@ -267,6 +333,14 @@
             this.name.Size = new System.Drawing.Size(243, 22);
             this.name.TabIndex = 0;
             // 
+            // note
+            // 
+            this.note.Location = new System.Drawing.Point(332, 21);
+            this.note.Name = "note";
+            this.note.Size = new System.Drawing.Size(278, 53);
+            this.note.TabIndex = 19;
+            this.note.Text = "";
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -283,6 +357,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bandList)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.repertoireList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.image)).EndInit();
             this.ResumeLayout(false);
@@ -314,5 +390,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox image;
         private System.Windows.Forms.DataGridView repertoireList;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DateTimePicker dateTo;
+        private System.Windows.Forms.DateTimePicker dateFrom;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button reserve;
+        private System.Windows.Forms.RichTextBox note;
     }
 }

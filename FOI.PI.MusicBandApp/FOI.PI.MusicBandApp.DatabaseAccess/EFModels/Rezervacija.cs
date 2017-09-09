@@ -26,8 +26,16 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess
 
         public int? id_osoba { get; set; }
 
+        public int? status_rezervacije { get; set; }
+
+        public DateTime? datum_od { get; set; }
+
+        public DateTime? datum_do { get; set; }
+
         public virtual Bend Bend { get; set; }
 
         public virtual Osoba Osoba { get; set; }
+
+        public virtual StatusRezervacije StatusRezervacije { get; set; }
     }
 }

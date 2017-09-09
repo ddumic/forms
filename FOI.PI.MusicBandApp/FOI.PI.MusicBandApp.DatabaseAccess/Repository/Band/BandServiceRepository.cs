@@ -2,7 +2,6 @@
 using FOI.PI.MusicBandApp.Contracts.Band;
 using FOI.PI.MusicBandApp.Contracts.Validation;
 using System.Linq;
-using System;
 using System.Collections.Generic;
 
 namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Band
@@ -128,6 +127,24 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Band
                 }
 
                 return response;
+            }
+        }
+
+        public ErrorDto CreateReservation(ReservationDto reservation)
+        {
+            using (var db = new MusicBandAppEntities())
+            {
+                db.Rezervacija.Add(new Rezervacija()
+                {
+                    status_rezervacije = 1,
+                    id_osoba = reservation.UserId,
+                    id_bend = reservation.BandId,
+                    napomena = reservation.Note,
+                    datum_od = reservation.DateFrom,
+                    datum_do = reservation.DateTo
+                });
+                db.SaveChanges();
+                return new ErrorDto();
             }
         }
 

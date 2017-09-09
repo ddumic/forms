@@ -1,4 +1,7 @@
 ﻿using FOI.PI.MusicBandApp.Business.Band;
+using FOI.PI.MusicBandApp.Common.Extensions;
+using FOI.PI.MusicBandApp.Common.Resources;
+using FOI.PI.MusicBandApp.Contracts;
 using FOI.PI.MusicBandApp.Contracts.Band;
 using FOI.PI.MusicBandApp.Desktop.Helper;
 using FOI.PI.MusicBandApp.Desktop.ViewModel;
@@ -6,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace FOI.PI.MusicBandApp.Desktop.View.User
@@ -13,6 +17,7 @@ namespace FOI.PI.MusicBandApp.Desktop.View.User
     public partial class Home : FormHelper
     {
         private readonly IBandManagementService _bandManagementService;
+        private int _bandId;
 
         public Home(IBandManagementService bandManagementService)
         {
@@ -34,11 +39,34 @@ namespace FOI.PI.MusicBandApp.Desktop.View.User
             {
                 if (e.StateChanged == DataGridViewElementStates.Selected)
                 {
-                    UpdateFromBandDto(_bandManagementService.GetBandDetails(int.Parse(bandList[0, e.Row.Index].Value.ToString())));
+                    _bandId = int.Parse(bandList[0, e.Row.Index].Value.ToString());
 
-                    UpdateFromRepertoireDto(_bandManagementService.GetBandRepertoire(int.Parse(bandList[0, e.Row.Index].Value.ToString())));
+                    UpdateFromBandDto(_bandManagementService.GetBandDetails(_bandId));
+
+                    UpdateFromRepertoireDto(_bandManagementService.GetBandRepertoire(_bandId));
                 }
             });
+        }
+
+        private void reserve_Click(object sender, EventArgs e)
+        {
+            var reservation = MapFromForm();
+            if (reservation.Errors.Any())
+            {
+                MessageBoxHelper.ShowMessageBox(reservation.Errors.First().ErrorMesssage);
+            }
+            else
+            {
+                var response = _bandManagementService.CreateReservation(reservation);
+                if (!string.IsNullOrEmpty(response.ErrorMesssage))
+                {
+                    MessageBoxHelper.ShowMessageBox(response.ErrorMesssage);
+                }
+                else
+                {
+                    MessageBoxHelper.ShowMessageBox(ResourceHelper.ResourceKey.ReservationSentSuccessfully, true);
+                }
+            }
         }
 
         #region Helper
@@ -97,6 +125,33 @@ namespace FOI.PI.MusicBandApp.Desktop.View.User
 
             repertoireList.DataSource = repertoire;
         }
+
+        public ReservationDto MapFromForm()
+        {
+            return new ReservationDto()
+            {
+                DateFrom = dateFrom.Text.ToDateTime(),
+                DateTo = dateTo.Text.ToDateTime(),
+                BandId = _bandId,
+                UserId = AccountHelper.GetInstance().Id,
+                Note = note.Text,
+                Errors = MapErrors()
+            };
+        }
+
+        private List<ErrorDto> MapErrors()
+        {
+            var errorList = new List<ErrorDto>();
+
+            if (string.IsNullOrEmpty(note.Text))
+                errorList.Add(new ErrorDto() { ErrorMesssage = ResourceHelper.ResourceKey.InputFieldsMissing });
+
+            else if (dateTo.Text.ToDateTime() < dateFrom.Text.ToDateTime())
+                errorList.Add(new ErrorDto() { ErrorMesssage = ResourceHelper.ResourceKey.DateToGreaterIsThanDateFrom });
+
+            return errorList;
+        }
         #endregion
+
     }
 }

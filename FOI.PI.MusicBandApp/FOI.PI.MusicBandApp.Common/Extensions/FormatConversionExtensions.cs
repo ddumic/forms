@@ -66,5 +66,12 @@ namespace FOI.PI.MusicBandApp.Common.Extensions
             double.TryParse(value, out result);
             return result;
         }
+
+        public static TimeSpan ToTimeSpan(this string value)
+        {
+            TimeSpan time;
+            TimeSpan.TryParse(value, out time);
+            return time;
+        }
     }
 }

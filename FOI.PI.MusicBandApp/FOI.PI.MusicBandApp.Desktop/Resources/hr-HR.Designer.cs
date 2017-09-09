@@ -133,6 +133,15 @@ namespace FOI.PI.MusicBandApp.Desktop.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Trajanje je u pogrešnom formatu (Ispravan format: &apos;HH:mm:ss&apos;).
+        /// </summary>
+        internal static string IncorrectTimeSpanFormat {
+            get {
+                return ResourceManager.GetString("IncorrectTimeSpanFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Popunite sva polja.
         /// </summary>
         internal static string InsertAllValues {
@@ -246,6 +255,15 @@ namespace FOI.PI.MusicBandApp.Desktop.Resources {
         internal static string ResultSetHasMultipleValues {
             get {
                 return ResourceManager.GetString("ResultSetHasMultipleValues", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pjesma uspješno dodana.
+        /// </summary>
+        internal static string SongAddedSuccessfully {
+            get {
+                return ResourceManager.GetString("SongAddedSuccessfully", resourceCulture);
             }
         }
         

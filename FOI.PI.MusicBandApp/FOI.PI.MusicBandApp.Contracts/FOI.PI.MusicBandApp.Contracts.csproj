@@ -50,6 +50,9 @@
     <Compile Include="ErrorDto.cs" />
     <Compile Include="LoginDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Song\GenreDto.cs" />
+    <Compile Include="Song\ISongServiceRepository.cs" />
+    <Compile Include="Song\SongDto.cs" />
     <Compile Include="Validation\Validation.cs" />
     <Compile Include="Validation\ValidationStatusCode.cs" />
   </ItemGroup>

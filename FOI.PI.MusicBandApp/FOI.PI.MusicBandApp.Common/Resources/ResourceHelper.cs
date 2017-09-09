@@ -27,6 +27,8 @@
             public static readonly string ReservationSubmittedSuccessfully = "ReservationSubmittedSuccessfully";
             public static readonly string MemberDeletedSuccessfully = "MemberDeletedSuccessfully";
             public static readonly string MemberAddedSuccessfully = "MemberAddedSuccessfully";
+            public static readonly string SongAddedSuccessfully = "SongAddedSuccessfully";
+            public static readonly string IncorrectTimeSpanFormat = "IncorrectTimeSpanFormat";
         }
     }
 }

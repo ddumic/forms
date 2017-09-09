@@ -58,6 +58,7 @@
     <Compile Include="ViewModel\BandListItemViewModel.cs" />
     <Compile Include="ViewModel\BandMemberViewModel.cs" />
     <Compile Include="ViewModel\ComboBoxItem.cs" />
+    <Compile Include="ViewModel\GenreViewModel.cs" />
     <Compile Include="ViewModel\RepertoireViewModel.cs" />
     <Compile Include="ViewModel\ReservationListItemViewModel.cs" />
     <Compile Include="View\BandRegistration.cs">
@@ -88,6 +89,18 @@
     </Compile>
     <Compile Include="View\Band\FrmGlavna.Designer.cs">
       <DependentUpon>FrmGlavna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Band\FrmPjesma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Band\FrmPjesma.Designer.cs">
+      <DependentUpon>FrmPjesma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Band\FrmRepertoar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Band\FrmRepertoar.Designer.cs">
+      <DependentUpon>FrmRepertoar.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Band\FrmRezervacija.cs">
       <SubType>Form</SubType>
@@ -142,6 +155,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Band\FrmGlavna.resx">
       <DependentUpon>FrmGlavna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Band\FrmPjesma.resx">
+      <DependentUpon>FrmPjesma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Band\FrmRepertoar.resx">
+      <DependentUpon>FrmRepertoar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Band\FrmRezervacija.resx">
       <DependentUpon>FrmRezervacija.cs</DependentUpon>

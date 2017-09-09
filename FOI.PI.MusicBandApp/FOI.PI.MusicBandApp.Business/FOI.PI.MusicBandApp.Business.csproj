@@ -47,6 +47,8 @@
     <Compile Include="Band\IBandManagementService.cs" />
     <Compile Include="Band\Member\IBandMemberManagementService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Song\ISongManagementService.cs" />
+    <Compile Include="Song\SongManagementService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FOI.PI.MusicBandApp.Contracts\FOI.PI.MusicBandApp.Contracts.csproj">

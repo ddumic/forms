@@ -60,5 +60,11 @@ namespace FOI.PI.MusicBandApp.Common.Extensions
             double result;
             return double.TryParse(value, out result);
         }
+
+        public static bool IsInputTimeSpan(this string value)
+        {
+            TimeSpan time;
+            return TimeSpan.TryParse(value, out time);
+        }
     }
 }

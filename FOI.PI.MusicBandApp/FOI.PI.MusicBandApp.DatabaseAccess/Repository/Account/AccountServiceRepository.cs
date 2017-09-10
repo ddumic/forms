@@ -4,6 +4,7 @@ using FOI.PI.MusicBandApp.Contracts.Validation;
 using System.Linq;
 using System;
 using System.Collections.Generic;
+using FOI.PI.MusicBandApp.Common.Security;
 
 namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Account
 {
@@ -57,7 +58,7 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Account
         {
             using (var db = new MusicBandAppEntities())
             {
-                var user = db.Osoba.Where(x => x.mail == mail && x.lozinka == password && x.tip_korisnika != 3);
+                var user = db.Osoba.Where(x => x.mail == mail && x.tip_korisnika != 3);
                 var responseDto = new AccountDto();
                 if (user.Count() > 1)
                 {
@@ -69,15 +70,26 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Account
                 else if (user.Any())
                 {
                     var loggedUser = user.First();
-                    responseDto.Address = loggedUser.adresa;
-                    responseDto.AccountType = loggedUser.tip_korisnika;
-                    responseDto.City = loggedUser.mjesto;
-                    responseDto.Gender = loggedUser.spol;
-                    responseDto.Mail = loggedUser.mail;
-                    responseDto.Name = loggedUser.ime;
-                    responseDto.Surname = loggedUser.prezime;
-                    responseDto.AccountFounded = true;
-                    responseDto.Id = loggedUser.id_osoba;
+
+                    var pswd = loggedUser.lozinka.Decrypt();
+                    if (string.Compare(pswd, password) != 0)
+                        responseDto.Errors.Add(new ErrorDto()
+                        {
+                            ErrorCode = (int)ValidationStatusCode.ResultsetHasMoreItems
+                        });
+
+                    else
+                    {
+                        responseDto.Address = loggedUser.adresa;
+                        responseDto.AccountType = loggedUser.tip_korisnika;
+                        responseDto.City = loggedUser.mjesto;
+                        responseDto.Gender = loggedUser.spol;
+                        responseDto.Mail = loggedUser.mail;
+                        responseDto.Name = loggedUser.ime;
+                        responseDto.Surname = loggedUser.prezime;
+                        responseDto.AccountFounded = true;
+                        responseDto.Id = loggedUser.id_osoba;
+                    }
                 }
                 else
                 {

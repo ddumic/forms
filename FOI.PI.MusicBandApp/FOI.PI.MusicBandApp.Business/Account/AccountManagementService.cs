@@ -5,6 +5,7 @@ using FOI.PI.MusicBandApp.Contracts;
 using System.Collections.Generic;
 using System;
 using FOI.PI.MusicBandApp.Contracts.Band;
+using FOI.PI.MusicBandApp.Common.Security;
 
 namespace FOI.PI.MusicBandApp.Business.Account
 {
@@ -59,6 +60,7 @@ namespace FOI.PI.MusicBandApp.Business.Account
         {
             try
             {
+                account.Password = account.Password.Encrypt();
                 var response = _accountServiceRepository.Register(account);
                 if (response.ErrorCode.HasValue)
                     return Validation.TranslateValidationStatusCode(response.ErrorCode.Value);

@@ -4,6 +4,7 @@ using FOI.PI.MusicBandApp.Contracts.Validation;
 using System.Linq;
 using System.Collections.Generic;
 using FOI.PI.MusicBandApp.Contracts.Account;
+using FOI.PI.MusicBandApp.Common.Security;
 
 namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Band
 {
@@ -71,7 +72,7 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Band
         {
             using (var db = new MusicBandAppEntities())
             {
-                var account = db.Bend.Where(x => x.e_mail == mail && x.lozinka == password && x.tip_korisnika != 3);
+                var account = db.Bend.Where(x => x.e_mail == mail && x.tip_korisnika != 3);
                 var responseDto = new BandDto();
                 if (account.Count() > 1)
                 {
@@ -82,7 +83,15 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Band
                 }
                 else if (account.Any())
                 {
-                    responseDto = MapBand(account.First());
+                    var str = account.First().lozinka.Decrypt();
+                    if (string.Compare(str, password) != 0)
+                        responseDto.Errors.Add(new ErrorDto()
+                        {
+                            ErrorCode = (int)ValidationStatusCode.UserDoesNotExists
+                        });
+
+                    else
+                        responseDto = MapBand(account.First());
                 }
                 else
                 {

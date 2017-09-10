@@ -5,6 +5,7 @@ using System.Linq;
 using System.Collections.Generic;
 using FOI.PI.MusicBandApp.Contracts.Validation;
 using FOI.PI.MusicBandApp.Contracts.Account;
+using FOI.PI.MusicBandApp.Common.Security;
 
 namespace FOI.PI.MusicBandApp.Business.Band
 {
@@ -52,6 +53,7 @@ namespace FOI.PI.MusicBandApp.Business.Band
         {
             try
             {
+                band.Password = band.Password.Encrypt();
                 var response = _bandServiceRepository.Register(band);
                 if (response.ErrorCode.HasValue)
                     return Validation.TranslateValidationStatusCode(response.ErrorCode.Value);
@@ -93,6 +95,7 @@ namespace FOI.PI.MusicBandApp.Business.Band
         {
             try
             {
+                band.Password = band.Password.Encrypt();
                 var response = _bandServiceRepository.UpdateBand(band);
                 if (response.ErrorCode.HasValue)
                     return Validation.TranslateValidationStatusCode(response.ErrorCode.Value);

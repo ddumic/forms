@@ -55,6 +55,10 @@
     <Compile Include="Song\SongManagementService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FOI.PI.MusicBandApp.Common\FOI.PI.MusicBandApp.Common.csproj">
+      <Project>{04A4C41E-880E-4C4E-94A5-D0A5F061E7AF}</Project>
+      <Name>FOI.PI.MusicBandApp.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FOI.PI.MusicBandApp.Contracts\FOI.PI.MusicBandApp.Contracts.csproj">
       <Project>{314524c6-0bc2-4a49-b0bf-c9e56d2b1302}</Project>
       <Name>FOI.PI.MusicBandApp.Contracts</Name>

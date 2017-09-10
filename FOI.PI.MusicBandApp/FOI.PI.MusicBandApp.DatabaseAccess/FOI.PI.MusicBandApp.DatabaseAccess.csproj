@@ -75,6 +75,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FOI.PI.MusicBandApp.Common\FOI.PI.MusicBandApp.Common.csproj">
+      <Project>{04A4C41E-880E-4C4E-94A5-D0A5F061E7AF}</Project>
+      <Name>FOI.PI.MusicBandApp.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FOI.PI.MusicBandApp.Contracts\FOI.PI.MusicBandApp.Contracts.csproj">
       <Project>{314524C6-0BC2-4A49-B0BF-C9E56D2B1302}</Project>
       <Name>FOI.PI.MusicBandApp.Contracts</Name>

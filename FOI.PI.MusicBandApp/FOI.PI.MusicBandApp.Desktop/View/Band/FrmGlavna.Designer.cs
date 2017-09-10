@@ -163,6 +163,7 @@
             this.korisničkaDokumentacijaToolStripMenuItem.Name = "korisničkaDokumentacijaToolStripMenuItem";
             this.korisničkaDokumentacijaToolStripMenuItem.Size = new System.Drawing.Size(253, 26);
             this.korisničkaDokumentacijaToolStripMenuItem.Text = "Korisnička dokumentacija";
+            this.korisničkaDokumentacijaToolStripMenuItem.Click += new System.EventHandler(this.korisničkaDokumentacijaToolStripMenuItem_Click);
             // 
             // profilToolStripMenuItem
             // 
@@ -175,7 +176,7 @@
             // odjavaToolStripMenuItem
             // 
             this.odjavaToolStripMenuItem.Name = "odjavaToolStripMenuItem";
-            this.odjavaToolStripMenuItem.Size = new System.Drawing.Size(131, 26);
+            this.odjavaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.odjavaToolStripMenuItem.Text = "Odjava";
             this.odjavaToolStripMenuItem.Click += new System.EventHandler(this.odjavaToolStripMenuItem_Click);
             // 

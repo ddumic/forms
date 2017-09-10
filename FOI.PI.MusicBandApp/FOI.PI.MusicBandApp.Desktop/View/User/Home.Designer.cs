@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.pregledRezervacijaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.odjavaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -58,7 +59,8 @@
             this.webpage = new System.Windows.Forms.TextBox();
             this.city = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.TextBox();
-            this.pregledRezervacijaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pomoćToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.korisničkaDokumentacijaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bandList)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -72,12 +74,20 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pregledRezervacijaToolStripMenuItem,
+            this.pomoćToolStripMenuItem,
             this.profilToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(951, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // pregledRezervacijaToolStripMenuItem
+            // 
+            this.pregledRezervacijaToolStripMenuItem.Name = "pregledRezervacijaToolStripMenuItem";
+            this.pregledRezervacijaToolStripMenuItem.Size = new System.Drawing.Size(147, 24);
+            this.pregledRezervacijaToolStripMenuItem.Text = "Pregled rezervacija";
+            this.pregledRezervacijaToolStripMenuItem.Click += new System.EventHandler(this.pregledRezervacijaToolStripMenuItem_Click);
             // 
             // profilToolStripMenuItem
             // 
@@ -343,12 +353,20 @@
             this.name.Size = new System.Drawing.Size(243, 22);
             this.name.TabIndex = 0;
             // 
-            // pregledRezervacijaToolStripMenuItem
+            // pomoćToolStripMenuItem
             // 
-            this.pregledRezervacijaToolStripMenuItem.Name = "pregledRezervacijaToolStripMenuItem";
-            this.pregledRezervacijaToolStripMenuItem.Size = new System.Drawing.Size(147, 24);
-            this.pregledRezervacijaToolStripMenuItem.Text = "Pregled rezervacija";
-            this.pregledRezervacijaToolStripMenuItem.Click += new System.EventHandler(this.pregledRezervacijaToolStripMenuItem_Click);
+            this.pomoćToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.korisničkaDokumentacijaToolStripMenuItem});
+            this.pomoćToolStripMenuItem.Name = "pomoćToolStripMenuItem";
+            this.pomoćToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.pomoćToolStripMenuItem.Text = "Pomoć";
+            // 
+            // korisničkaDokumentacijaToolStripMenuItem
+            // 
+            this.korisničkaDokumentacijaToolStripMenuItem.Name = "korisničkaDokumentacijaToolStripMenuItem";
+            this.korisničkaDokumentacijaToolStripMenuItem.Size = new System.Drawing.Size(253, 26);
+            this.korisničkaDokumentacijaToolStripMenuItem.Text = "Korisnička dokumentacija";
+            this.korisničkaDokumentacijaToolStripMenuItem.Click += new System.EventHandler(this.korisničkaDokumentacijaToolStripMenuItem_Click);
             // 
             // Home
             // 
@@ -407,5 +425,7 @@
         private System.Windows.Forms.Button reserve;
         private System.Windows.Forms.RichTextBox note;
         private System.Windows.Forms.ToolStripMenuItem pregledRezervacijaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pomoćToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem korisničkaDokumentacijaToolStripMenuItem;
     }
 }

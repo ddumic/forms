@@ -18,6 +18,7 @@ using FOI.PI.MusicBandApp.Desktop.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace FOI.PI.MusicBandApp.Desktop.View.Band
 {
@@ -165,6 +166,11 @@ namespace FOI.PI.MusicBandApp.Desktop.View.Band
         private void troškoviToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FrmFinancije(new FinanceManagementService(new FinanceServiceRepository()), new BandManagementService(new BandServiceRepository())).Show();
+        }
+
+        private void korisničkaDokumentacijaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, base.GetHelpFilePath());
         }
     }
 }

@@ -152,5 +152,10 @@ namespace FOI.PI.MusicBandApp.Desktop.View.User
         {
             new Reservation(new AccountManagementService(new AccountServiceRepository(), new BandServiceRepository()), new BandManagementService(new BandServiceRepository())).Show();
         }
+
+        private void korisničkaDokumentacijaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, base.GetHelpFilePath());
+        }
     }
 }

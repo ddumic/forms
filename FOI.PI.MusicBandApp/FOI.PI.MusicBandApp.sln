@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FOI.PI.MusicBandApp.Busines
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FOI.PI.MusicBandApp.Common", "FOI.PI.MusicBandApp.Common\FOI.PI.MusicBandApp.Common.csproj", "{04A4C41E-880E-4C4E-94A5-D0A5F061E7AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FOI.PI.MusicBandApp.Common.Test", "FOI.PI.MusicBandApp.Common.Test\FOI.PI.MusicBandApp.Common.Test.csproj", "{132A1BAE-9A12-4AED-9870-9239A3DC614A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,22 @@ Global
 		{04A4C41E-880E-4C4E-94A5-D0A5F061E7AF}.Release|x64.Build.0 = Release|Any CPU
 		{04A4C41E-880E-4C4E-94A5-D0A5F061E7AF}.Release|x86.ActiveCfg = Release|Any CPU
 		{04A4C41E-880E-4C4E-94A5-D0A5F061E7AF}.Release|x86.Build.0 = Release|Any CPU
+		{132A1BAE-9A12-4AED-9870-9239A3DC614A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{132A1BAE-9A12-4AED-9870-9239A3DC614A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{132A1BAE-9A12-4AED-9870-9239A3DC614A}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{132A1BAE-9A12-4AED-9870-9239A3DC614A}.Debug|ARM.Build.0 = Debug|Any CPU
+		{132A1BAE-9A12-4AED-9870-9239A3DC614A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{132A1BAE-9A12-4AED-9870-9239A3DC614A}.Debug|x64.Build.0 = Debug|Any CPU
+		{132A1BAE-9A12-4AED-9870-9239A3DC614A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{132A1BAE-9A12-4AED-9870-9239A3DC614A}.Debug|x86.Build.0 = Debug|Any CPU
+		{132A1BAE-9A12-4AED-9870-9239A3DC614A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{132A1BAE-9A12-4AED-9870-9239A3DC614A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{132A1BAE-9A12-4AED-9870-9239A3DC614A}.Release|ARM.ActiveCfg = Release|Any CPU
+		{132A1BAE-9A12-4AED-9870-9239A3DC614A}.Release|ARM.Build.0 = Release|Any CPU
+		{132A1BAE-9A12-4AED-9870-9239A3DC614A}.Release|x64.ActiveCfg = Release|Any CPU
+		{132A1BAE-9A12-4AED-9870-9239A3DC614A}.Release|x64.Build.0 = Release|Any CPU
+		{132A1BAE-9A12-4AED-9870-9239A3DC614A}.Release|x86.ActiveCfg = Release|Any CPU
+		{132A1BAE-9A12-4AED-9870-9239A3DC614A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

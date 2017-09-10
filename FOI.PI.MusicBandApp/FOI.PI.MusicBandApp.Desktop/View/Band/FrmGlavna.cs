@@ -1,6 +1,7 @@
 ﻿using FOI.PI.MusicBandApp.Business.Account;
 using FOI.PI.MusicBandApp.Business.Band;
 using FOI.PI.MusicBandApp.Business.Band.Member;
+using FOI.PI.MusicBandApp.Business.Finance;
 using FOI.PI.MusicBandApp.Business.Inventory;
 using FOI.PI.MusicBandApp.Business.Song;
 using FOI.PI.MusicBandApp.Common.Extensions;
@@ -10,6 +11,7 @@ using FOI.PI.MusicBandApp.Contracts.Band;
 using FOI.PI.MusicBandApp.DatabaseAccess.Repository.Account;
 using FOI.PI.MusicBandApp.DatabaseAccess.Repository.Band;
 using FOI.PI.MusicBandApp.DatabaseAccess.Repository.Band.Member;
+using FOI.PI.MusicBandApp.DatabaseAccess.Repository.Finance;
 using FOI.PI.MusicBandApp.DatabaseAccess.Repository.Inventory;
 using FOI.PI.MusicBandApp.DatabaseAccess.Repository.Song;
 using FOI.PI.MusicBandApp.Desktop.Helper;
@@ -158,6 +160,11 @@ namespace FOI.PI.MusicBandApp.Desktop.View.Band
         private void popisOpremeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FrmPregledOpreme(new InventoryManagementService(new InventoryServiceRepository())).Show();
+        }
+
+        private void troškoviToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmFinancije(new FinanceManagementService(new FinanceServiceRepository()), new BandManagementService(new BandServiceRepository())).Show();
         }
     }
 }

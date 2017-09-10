@@ -84,6 +84,12 @@
     <Compile Include="View\Band\FrmClan.Designer.cs">
       <DependentUpon>FrmClan.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Band\FrmFinancije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Band\FrmFinancije.Designer.cs">
+      <DependentUpon>FrmFinancije.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Band\FrmGlavna.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Band\FrmClan.resx">
       <DependentUpon>FrmClan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Band\FrmFinancije.resx">
+      <DependentUpon>FrmFinancije.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Band\FrmGlavna.resx">
       <DependentUpon>FrmGlavna.cs</DependentUpon>

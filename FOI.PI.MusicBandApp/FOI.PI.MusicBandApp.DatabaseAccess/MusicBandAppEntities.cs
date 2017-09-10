@@ -83,8 +83,8 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess
                 .Map(m => m.ToTable("Izvodi").MapLeftKey("id_bend").MapRightKey("id_pjesma"));
 
             modelBuilder.Entity<Financije>()
-                .Property(e => e.iznos)
-                .HasPrecision(10, 0);
+                .Property(e => e.naziv)
+                .IsUnicode(false);
 
             modelBuilder.Entity<Financije>()
                 .Property(e => e.opis)

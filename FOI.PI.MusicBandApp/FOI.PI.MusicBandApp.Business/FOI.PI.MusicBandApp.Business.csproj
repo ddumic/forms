@@ -46,6 +46,8 @@
     <Compile Include="Band\Member\BandMemberManagementService.cs" />
     <Compile Include="Band\IBandManagementService.cs" />
     <Compile Include="Band\Member\IBandMemberManagementService.cs" />
+    <Compile Include="Finance\FinanceManagementService.cs" />
+    <Compile Include="Finance\IFinanceManagementService.cs" />
     <Compile Include="Inventory\IInventoryManagementService.cs" />
     <Compile Include="Inventory\InventoryManagementService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -33,6 +33,7 @@
             public static readonly string InvalidPriceFormat = "InvalidPriceFormat";
             public static readonly string InventoryRemovedSuccessfully = "InventoryRemovedSuccessfully";
             public static readonly string InventoryAddedSuccessfully = "InventoryAddedSuccessfully";
+            public static readonly string FinanceAddedSuccessfully = "FinanceAddedSuccessfully";
         }
     }
 }

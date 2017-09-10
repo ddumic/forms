@@ -134,6 +134,7 @@
             this.troškoviToolStripMenuItem.Name = "troškoviToolStripMenuItem";
             this.troškoviToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.troškoviToolStripMenuItem.Text = "Troškovi";
+            this.troškoviToolStripMenuItem.Click += new System.EventHandler(this.troškoviToolStripMenuItem_Click);
             // 
             // pregledRezervacijaToolStripMenuItem
             // 

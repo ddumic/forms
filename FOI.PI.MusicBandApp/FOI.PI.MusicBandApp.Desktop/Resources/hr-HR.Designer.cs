@@ -151,11 +151,38 @@ namespace FOI.PI.MusicBandApp.Desktop.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cijena ima pogrešan format.
+        /// </summary>
+        internal static string InvalidPriceFormat {
+            get {
+                return ResourceManager.GetString("InvalidPriceFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rezervacija mora biti u statusu &apos;Zatrazena&apos;.
         /// </summary>
         internal static string InvalidReservationStatus {
             get {
                 return ResourceManager.GetString("InvalidReservationStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oprema uspješno dodana.
+        /// </summary>
+        internal static string InventoryAddedSuccessfully {
+            get {
+                return ResourceManager.GetString("InventoryAddedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oprema uspješno izbrisana.
+        /// </summary>
+        internal static string InventoryRemovedSuccessfully {
+            get {
+                return ResourceManager.GetString("InventoryRemovedSuccessfully", resourceCulture);
             }
         }
         

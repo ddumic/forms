@@ -39,11 +39,6 @@ namespace FOI.PI.MusicBandApp.Desktop.View.Band
         private void GetBandSongs()
         {
             bandSongs.DataSource = _songManagementService.GetBandSongs(AccountHelper.GetInstance().Id);
-        }
-
-        private void GetAvailableSongs()
-        {
-            songList.DataSource = MapToSongViewModel(_songManagementService.GetAvailableSongs(AccountHelper.GetInstance().Id));
             bandSongs.RowStateChanged += ((o, e) =>
             {
                 if (e.StateChanged == DataGridViewElementStates.Selected)
@@ -51,6 +46,11 @@ namespace FOI.PI.MusicBandApp.Desktop.View.Band
                     _selectedSong = int.Parse(bandSongs[0, e.Row.Index].Value.ToString());
                 }
             });
+        }
+
+        private void GetAvailableSongs()
+        {
+            songList.DataSource = MapToSongViewModel(_songManagementService.GetAvailableSongs(AccountHelper.GetInstance().Id));
         }
 
         private void add_Click(object sender, System.EventArgs e)

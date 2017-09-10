@@ -10,7 +10,6 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess
     public partial class PopisOpreme
     {
         [Key]
-        [Column(Order = 0)]
         public int id_oprema { get; set; }
 
         [StringLength(45)]
@@ -19,10 +18,7 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess
         public double? cijena { get; set; }
 
         public double? vrijednost { get; set; }
-
-        [Key]
-        [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        
         public int id_bend { get; set; }
 
         public virtual Bend Bend { get; set; }

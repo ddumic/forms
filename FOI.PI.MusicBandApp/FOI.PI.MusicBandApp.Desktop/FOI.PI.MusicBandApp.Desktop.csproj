@@ -96,6 +96,12 @@
     <Compile Include="View\Band\FrmPjesma.Designer.cs">
       <DependentUpon>FrmPjesma.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Band\FrmPregledOpreme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Band\FrmPregledOpreme.Designer.cs">
+      <DependentUpon>FrmPregledOpreme.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Band\FrmRepertoar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Band\FrmPjesma.resx">
       <DependentUpon>FrmPjesma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Band\FrmPregledOpreme.resx">
+      <DependentUpon>FrmPregledOpreme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Band\FrmRepertoar.resx">
       <DependentUpon>FrmRepertoar.cs</DependentUpon>

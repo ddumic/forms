@@ -66,6 +66,7 @@
     <Compile Include="EFModels\TipKorisnika.cs" />
     <Compile Include="EFModels\Zanr.cs" />
     <Compile Include="Repository\Band\Member\BandMemberServiceRepository.cs" />
+    <Compile Include="Repository\Inventory\InventoryServiceRepository.cs" />
     <Compile Include="Repository\Song\SongServiceRepository.cs" />
   </ItemGroup>
   <ItemGroup>

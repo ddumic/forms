@@ -30,6 +30,9 @@
             public static readonly string SongAddedSuccessfully = "SongAddedSuccessfully";
             public static readonly string IncorrectTimeSpanFormat = "IncorrectTimeSpanFormat";
             public static readonly string SongRemovedSuccessfully = "SongRemovedSuccessfully";
+            public static readonly string InvalidPriceFormat = "InvalidPriceFormat";
+            public static readonly string InventoryRemovedSuccessfully = "InventoryRemovedSuccessfully";
+            public static readonly string InventoryAddedSuccessfully = "InventoryAddedSuccessfully";
         }
     }
 }

@@ -48,6 +48,8 @@
     <Compile Include="Band\RepertoireDto.cs" />
     <Compile Include="Account\ReservationDto.cs" />
     <Compile Include="ErrorDto.cs" />
+    <Compile Include="Inventory\IInventoryServiceRepository.cs" />
+    <Compile Include="Inventory\InventoryDto.cs" />
     <Compile Include="LoginDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Song\GenreDto.cs" />

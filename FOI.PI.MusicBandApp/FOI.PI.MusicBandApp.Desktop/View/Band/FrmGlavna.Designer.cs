@@ -100,7 +100,7 @@
             // repertoarToolStripMenuItem1
             // 
             this.repertoarToolStripMenuItem1.Name = "repertoarToolStripMenuItem1";
-            this.repertoarToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.repertoarToolStripMenuItem1.Size = new System.Drawing.Size(150, 26);
             this.repertoarToolStripMenuItem1.Text = "Repertoar";
             // 
             // mojBendToolStripMenuItem
@@ -120,6 +120,7 @@
             this.popisOpremeToolStripMenuItem.Name = "popisOpremeToolStripMenuItem";
             this.popisOpremeToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.popisOpremeToolStripMenuItem.Text = "Popis opreme";
+            this.popisOpremeToolStripMenuItem.Click += new System.EventHandler(this.popisOpremeToolStripMenuItem_Click);
             // 
             // repertoarToolStripMenuItem
             // 
@@ -173,7 +174,7 @@
             // odjavaToolStripMenuItem
             // 
             this.odjavaToolStripMenuItem.Name = "odjavaToolStripMenuItem";
-            this.odjavaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.odjavaToolStripMenuItem.Size = new System.Drawing.Size(131, 26);
             this.odjavaToolStripMenuItem.Text = "Odjava";
             this.odjavaToolStripMenuItem.Click += new System.EventHandler(this.odjavaToolStripMenuItem_Click);
             // 

@@ -38,7 +38,7 @@ namespace FOI.PI.MusicBandApp.Desktop.View.Band
 
         private void GetBandSongs()
         {
-            bandSongs.DataSource = _songManagementService.GetBandSongs(AccountHelper.GetInstance().Id);
+            bandSongs.DataSource = MapToSongViewModel(_songManagementService.GetBandSongs(AccountHelper.GetInstance().Id));
             bandSongs.RowStateChanged += ((o, e) =>
             {
                 if (e.StateChanged == DataGridViewElementStates.Selected)

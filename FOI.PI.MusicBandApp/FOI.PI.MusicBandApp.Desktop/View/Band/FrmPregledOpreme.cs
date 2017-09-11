@@ -4,6 +4,7 @@ using FOI.PI.MusicBandApp.Common.Resources;
 using FOI.PI.MusicBandApp.Contracts;
 using FOI.PI.MusicBandApp.Contracts.Inventory;
 using FOI.PI.MusicBandApp.Desktop.Helper;
+using FOI.PI.MusicBandApp.Desktop.ViewModel;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -25,7 +26,7 @@ namespace FOI.PI.MusicBandApp.Desktop.View.Band
 
         private void GetBandInventory()
         {
-            inventoryList.DataSource = _inventoryManagementService.GetInventory(AccountHelper.GetInstance().Id);
+            inventoryList.DataSource = MapToInventoryViewModel(_inventoryManagementService.GetInventory(AccountHelper.GetInstance().Id));
             inventoryList.RowStateChanged += ((o, e) =>
             {
                 if (e.StateChanged == DataGridViewElementStates.Selected)
@@ -52,6 +53,24 @@ namespace FOI.PI.MusicBandApp.Desktop.View.Band
         }
 
         #region Helper
+        private IList<InventoryViewModel> MapToInventoryViewModel(IList<InventoryDto> inventories)
+        {
+            var returnDto = new List<InventoryViewModel>();
+
+            foreach(var inventory in inventories)
+            {
+                returnDto.Add(new InventoryViewModel()
+                {
+                    BandId = inventory.BandId,
+                    Id = inventory.Id,
+                    Name = inventory.Name,
+                    Price = inventory.Price
+                });
+            }
+
+            return returnDto;
+        }
+
         private void HandleResponse(ErrorDto response, string message)
         {
             if (!string.IsNullOrEmpty(response.ErrorMesssage))

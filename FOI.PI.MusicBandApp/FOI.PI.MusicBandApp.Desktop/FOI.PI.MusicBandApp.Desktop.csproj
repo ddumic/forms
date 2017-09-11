@@ -61,10 +61,13 @@
   <ItemGroup>
     <Compile Include="ViewModel\BandListItemViewModel.cs" />
     <Compile Include="ViewModel\BandMemberViewModel.cs" />
+    <Compile Include="ViewModel\ChargeViewModel.cs" />
     <Compile Include="ViewModel\ComboBoxItem.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\InventoryViewModel.cs" />
     <Compile Include="ViewModel\RepertoireViewModel.cs" />
     <Compile Include="ViewModel\ReservationListItemViewModel.cs" />
+    <Compile Include="ViewModel\SongViewModel.cs" />
     <Compile Include="View\BandRegistration.cs">
       <SubType>Form</SubType>
     </Compile>

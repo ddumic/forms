@@ -5,6 +5,7 @@ using FOI.PI.MusicBandApp.Common.Resources;
 using FOI.PI.MusicBandApp.Contracts;
 using FOI.PI.MusicBandApp.Contracts.Finance;
 using FOI.PI.MusicBandApp.Desktop.Helper;
+using FOI.PI.MusicBandApp.Desktop.ViewModel;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -35,7 +36,7 @@ namespace FOI.PI.MusicBandApp.Desktop.View.Band
         private void GetAllFinancies()
         {
             var response = _financeManagementService.GetBandFinanceStatus(AccountHelper.GetInstance().Id);
-            chargeList.DataSource = response;
+            chargeList.DataSource = MapToChargeViewModel(response);
 
             chargeList.RowStateChanged += ((o, e) =>
             {
@@ -88,6 +89,25 @@ namespace FOI.PI.MusicBandApp.Desktop.View.Band
         }
 
         #region Helper
+        private IList<ChargeViewModel> MapToChargeViewModel(IList<FinanceDto> financies)
+        {
+            var returnDto = new List<ChargeViewModel>();
+
+            foreach (var financy in financies)
+            {
+                returnDto.Add(new ChargeViewModel()
+                {
+                    BandId = financy.BandId,
+                    Id = financy.Id,
+                    Name = financy.Name,
+                    Note = financy.Note,
+                    Price = financy.Price
+                });
+            }
+
+            return returnDto;
+        }
+
         private FinanceDto MapFromForm()
         {
             var fiance = new FinanceDto()

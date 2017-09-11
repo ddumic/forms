@@ -6,5 +6,6 @@ namespace FOI.PI.MusicBandApp.Contracts.Finance
     {
         List<FinanceDto> GetBandFinanceStatus(int bandId);
         ErrorDto AddCharge(FinanceDto finance);
+        ErrorDto RemoveCharge(int chargeId);
     }
 }

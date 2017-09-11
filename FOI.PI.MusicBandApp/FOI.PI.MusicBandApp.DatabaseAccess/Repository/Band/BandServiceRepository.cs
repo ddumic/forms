@@ -234,7 +234,8 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Band
                         DateFrom = reservation.datum_od,
                         DateTo = reservation.datum_do,
                         Status = reservation.StatusRezervacije.opis,
-                        Charge = reservation.cijena
+                        Charge = reservation.cijena,
+                        Note = reservation.napomena
                     });
                 }
 

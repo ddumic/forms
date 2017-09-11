@@ -115,6 +115,15 @@ namespace FOI.PI.MusicBandApp.Desktop.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Trošak uspješno izbrisan.
+        /// </summary>
+        internal static string FinanceRemovedSuccessfully {
+            get {
+                return ResourceManager.GetString("FinanceRemovedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pogrešna putanja do slike.
         /// </summary>
         internal static string ImageNotValid {

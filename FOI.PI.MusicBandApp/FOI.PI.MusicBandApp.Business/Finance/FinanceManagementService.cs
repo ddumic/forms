@@ -22,5 +22,10 @@ namespace FOI.PI.MusicBandApp.Business.Finance
         {
             return _financeServiceRepository.GetBandFinanceStatus(bandId);
         }
+
+        public ErrorDto RemoveCharge(int chargeId)
+        {
+            return _financeServiceRepository.RemoveCharge(chargeId);
+        }
     }
 }

@@ -7,6 +7,7 @@ using FOI.PI.MusicBandApp.Contracts.Finance;
 using FOI.PI.MusicBandApp.Desktop.Helper;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace FOI.PI.MusicBandApp.Desktop.View.Band
 {
@@ -14,6 +15,7 @@ namespace FOI.PI.MusicBandApp.Desktop.View.Band
     {
         private readonly IFinanceManagementService _financeManagementService;
         private readonly IBandManagementService _bandManagementService;
+        private int _chargeId;
 
         public FrmFinancije(IFinanceManagementService financeManagementService, IBandManagementService bandManagementService)
         {
@@ -34,6 +36,15 @@ namespace FOI.PI.MusicBandApp.Desktop.View.Band
         {
             var response = _financeManagementService.GetBandFinanceStatus(AccountHelper.GetInstance().Id);
             chargeList.DataSource = response;
+
+            chargeList.RowStateChanged += ((o, e) =>
+            {
+                if (e.StateChanged == DataGridViewElementStates.Selected)
+                {
+                    _chargeId = int.Parse(chargeList[0, e.Row.Index].Value.ToString());
+                }
+            });
+
             chargeCount.Text = response.Sum(x => x.Price.Value).ToString();
             diff.Text = (double.Parse(reservtionCharge.Text) - double.Parse(chargeCount.Text)).ToString();
         }
@@ -58,6 +69,21 @@ namespace FOI.PI.MusicBandApp.Desktop.View.Band
                     GetAllReservations();
                     GetAllFinancies();
                 }
+            }
+        }
+
+        private void delete_Click(object sender, System.EventArgs e)
+        {
+            var response = _financeManagementService.RemoveCharge(_chargeId);
+            if (!string.IsNullOrEmpty(response.ErrorMesssage))
+            {
+                MessageBoxHelper.ShowMessageBox(response.ErrorMesssage);
+            }
+            else
+            {
+                MessageBoxHelper.ShowMessageBox(ResourceHelper.ResourceKey.FinanceRemovedSuccessfully, true);
+                GetAllReservations();
+                GetAllFinancies();
             }
         }
 

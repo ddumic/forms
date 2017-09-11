@@ -85,7 +85,8 @@ namespace FOI.PI.MusicBandApp.Desktop.View.Band
                     DateFrom = reservation.DateFrom,
                     DateTo = reservation.DateTo,
                     Status = reservation.Status,
-                    Charge = reservation.Charge
+                    Charge = reservation.Charge,
+                    Note = reservation.Note
                 });
             }
 

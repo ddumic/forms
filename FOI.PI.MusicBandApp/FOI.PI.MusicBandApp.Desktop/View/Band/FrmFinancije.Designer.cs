@@ -44,6 +44,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.diff = new System.Windows.Forms.TextBox();
             this.chargeCount = new System.Windows.Forms.TextBox();
+            this.delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chargeList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -72,7 +73,7 @@
             this.groupBox1.Controls.Add(this.name);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 168);
+            this.groupBox1.Location = new System.Drawing.Point(12, 225);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(760, 148);
             this.groupBox1.TabIndex = 1;
@@ -154,7 +155,7 @@
             this.groupBox2.Controls.Add(this.diff);
             this.groupBox2.Controls.Add(this.chargeCount);
             this.groupBox2.Controls.Add(this.reservtionCharge);
-            this.groupBox2.Location = new System.Drawing.Point(12, 322);
+            this.groupBox2.Location = new System.Drawing.Point(12, 379);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(760, 113);
             this.groupBox2.TabIndex = 9;
@@ -204,11 +205,22 @@
             this.chargeCount.Size = new System.Drawing.Size(606, 22);
             this.chargeCount.TabIndex = 9;
             // 
+            // delete
+            // 
+            this.delete.Location = new System.Drawing.Point(12, 168);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(760, 23);
+            this.delete.TabIndex = 10;
+            this.delete.Text = "OBRIŠI TROŠAK";
+            this.delete.UseVisualStyleBackColor = true;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
+            // 
             // FrmFinancije
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 454);
+            this.ClientSize = new System.Drawing.Size(784, 502);
+            this.Controls.Add(this.delete);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.chargeList);
@@ -241,5 +253,6 @@
         private System.Windows.Forms.TextBox diff;
         private System.Windows.Forms.TextBox chargeCount;
         private System.Windows.Forms.Button add;
+        private System.Windows.Forms.Button delete;
     }
 }

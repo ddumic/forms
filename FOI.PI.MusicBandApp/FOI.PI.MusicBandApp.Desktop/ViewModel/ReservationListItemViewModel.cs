@@ -10,5 +10,6 @@ namespace FOI.PI.MusicBandApp.Desktop.ViewModel
         public DateTime? DateFrom { get; set; }
         public DateTime? DateTo { get; set; }
         public double? Charge { get; set; }
+        public string Note { get; set; }
     }
 }

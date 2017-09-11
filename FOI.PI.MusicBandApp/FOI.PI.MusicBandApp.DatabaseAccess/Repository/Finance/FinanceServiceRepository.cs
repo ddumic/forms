@@ -44,5 +44,15 @@ namespace FOI.PI.MusicBandApp.DatabaseAccess.Repository.Finance
                 return responseDto;
             }
         }
+
+        public ErrorDto RemoveCharge(int chargeId)
+        {
+            using (var db = new MusicBandAppEntities())
+            {
+                db.Financije.Remove(db.Financije.FirstOrDefault(x => x.id_trosak == chargeId));
+                db.SaveChanges();
+                return new ErrorDto();
+            }
+        }
     }
 }

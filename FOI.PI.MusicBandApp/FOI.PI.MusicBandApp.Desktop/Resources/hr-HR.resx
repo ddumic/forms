@@ -135,6 +135,9 @@
   <data name="FinanceAddedSuccessfully" xml:space="preserve">
     <value>Trošak uspješno dodan</value>
   </data>
+  <data name="FinanceRemovedSuccessfully" xml:space="preserve">
+    <value>Trošak uspješno izbrisan</value>
+  </data>
   <data name="ImageNotValid" xml:space="preserve">
     <value>Pogrešna putanja do slike</value>
   </data>

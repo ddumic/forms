@@ -53,10 +53,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="CryptoTest.cs" />
+    <Compile Include="Security\CryptoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FormatConversionTest.cs" />
-    <Compile Include="InputValidationTest.cs" />
+    <Compile Include="Extensions\FormatConversionTest.cs" />
+    <Compile Include="Extensions\InputValidationTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FOI.PI.MusicBandApp.Common\FOI.PI.MusicBandApp.Common.csproj">

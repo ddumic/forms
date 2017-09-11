@@ -34,6 +34,7 @@
             public static readonly string InventoryRemovedSuccessfully = "InventoryRemovedSuccessfully";
             public static readonly string InventoryAddedSuccessfully = "InventoryAddedSuccessfully";
             public static readonly string FinanceAddedSuccessfully = "FinanceAddedSuccessfully";
+            public static readonly string FinanceRemovedSuccessfully = "FinanceRemovedSuccessfully";
         }
     }
 }
